@@ -1,3 +1,5 @@
+import random
+
 def build_prompt_for_all_keys(facts_list):
     """
     - Lists all facts in the prompt
