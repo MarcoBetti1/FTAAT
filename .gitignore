@@ -2,4 +2,16 @@ __pycache__/
 
 venv/
 
+.DS_Store
+
 .env
+
+results/
+
+experiment_logs/
+
+*/__pycache__
+
+experiment_logs
+
+test.ipynb
