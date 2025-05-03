@@ -1,7 +1,7 @@
 import json, sqlite3
 from pathlib import Path
 from tqdm import tqdm   # nice progress when run standalone
-from db_utils import get_conn
+from pages.util.db_utils import get_conn
 
 RESULTS_ROOT = Path("results")
 

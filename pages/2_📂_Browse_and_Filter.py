@@ -1,6 +1,6 @@
 import streamlit as st, pandas as pd, sqlite3
-from db_utils import get_conn
-from json_import import import_json_dir
+from pages.util.db_utils import get_conn
+from pages.util.json_import import import_json_dir
 st.title("📂 Browse & filter trials")
 
 conn = get_conn()

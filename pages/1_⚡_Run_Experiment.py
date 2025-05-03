@@ -12,8 +12,8 @@ import os, re, traceback, inspect
 import streamlit as st
 
 import run_experiments as rex
-from discover      import discover_providers
-from json_import   import import_json_dir
+from pages.util.discover      import discover_providers
+from pages.util.json_import   import import_json_dir
 
 # ─────────────────────────── helpers ────────────────────────────
 def parse_int_list(text: str) -> list[int]:

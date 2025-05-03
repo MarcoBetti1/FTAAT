@@ -1,5 +1,5 @@
 import streamlit as st, pandas as pd, sqlite3
-from db_utils import get_conn
+from pages.util.db_utils import get_conn
 from token_diff import colour_tokens
 
 def load_trial(eid: str, idx: int) -> dict:
