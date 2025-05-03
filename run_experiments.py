@@ -13,10 +13,8 @@ from token_utils            import build_single_token_vocab
 # -------------- generic grading, unchanged except for tokenizer inject ------
 def grade_response(response_text, question_keys_in_order, key_value_dict, *,
                    tokenizer):
-    major_format_flaw = (
-        not response_text[0].isalpha() or response_text[-1].isalpha()
-    )
-
+    major_format_flaw = response_text[0].isalpha() and not response_text[-1].isalpha()
+    
     # expected + student answers
     correct_seqs = [key_value_dict[k] for k in question_keys_in_order]
     response_seqs = [ln.strip() for ln in response_text.splitlines() if ln.strip()]
