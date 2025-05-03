@@ -1,42 +1,30 @@
-def grade_response(response_text: str, question_keys_in_order: list, key_value_dict: dict):
+def evaluate_token_sequences(response_seqs: list[str], correct_seqs: list[str]):
     """
-    Parses the GPT response line-by-line. We expect it to list the values
-    in the same order as question_keys_in_order.
+    Compares tokenized sequences using '|' separator.
 
     Returns:
-      accuracy: fraction of lines that match exactly
-      num_matches: how many lines matched 
-      total: how many lines we expected
-      mismatch_details: list of (expected, got) for each mismatch
+        sequence_accuracy: % of full sequences that match exactly
+        token_accuracy: % of individual tokens that match
     """
-    # Split lines, strip whitespace
-    lines = [l.strip() for l in response_text.split("\n") if l.strip()]
-    # lines now might contain numbering, e.g. "1) Pk am ub" or just "Pk am ub".
+    total_sequences = min(len(response_seqs), len(correct_seqs))
+    total_tokens = 0
+    matched_tokens = 0
+    matched_sequences = 0
 
-    expected_count = len(question_keys_in_order)
-    num_matches = 0
-    mismatch_details = []
+    for resp_line, corr_line in zip(response_seqs, correct_seqs):
+        resp_tokens = resp_line.strip().split("|")
+        corr_tokens = corr_line.strip().split("|")
 
-    # We'll iterate over min(len(lines), expected_count) 
-    for i in range(expected_count):
-        expected_value = key_value_dict[question_keys_in_order[i]]
+        if resp_tokens == corr_tokens:
+            matched_sequences += 1
 
-        if i < len(lines):
+        for r, c in zip(resp_tokens, corr_tokens):
+            if r == c:
+                matched_tokens += 1
 
-            maybe_split = lines[i].split(")", 1)
-            if len(maybe_split) == 2 and maybe_split[0].isdigit():
-                candidate_answer = maybe_split[1].strip()  # e.g. "Pk am ub"
-            else:
-                candidate_answer = lines[i]
+        total_tokens += min(len(resp_tokens), len(corr_tokens))
 
-            if candidate_answer == expected_value:
-                num_matches += 1
-            else:
-                mismatch_details.append((expected_value, candidate_answer))
-        else:
-            # We have fewer lines in the response than we expected
-            mismatch_details.append((expected_value, "MISSING_LINE"))
+    sequence_accuracy = matched_sequences / total_sequences if total_sequences else 0
+    token_accuracy = matched_tokens / total_tokens if total_tokens else 0
 
-    accuracy = num_matches / expected_count
-
-    return accuracy, num_matches, expected_count, mismatch_details
+    return sequence_accuracy, token_accuracy

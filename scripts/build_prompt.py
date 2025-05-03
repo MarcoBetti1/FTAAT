@@ -15,15 +15,13 @@ def build_prompt_for_all_keys(facts_list):
     all_keys = [key for (_, key, _) in facts_list]
     random.shuffle(all_keys)
 
-    # We'll list them as "1) <key>" etc. 
-    questions_text = "\n".join(f"{i+1}) {k}" for i, k in enumerate(all_keys))
+    questions_text = "\n".join(k for k in all_keys)
 
     prompt = (
         "Below are some arbitrary assignments of Key => Value:\n\n"
         f"{facts_text}\n\n"
-        "Your task is to provide the correct Values for each of the following Keys, "
-        "in the exact same order they are listed:\n\n"
+        "Your task is to provide the correct Values for each of the following Keys in the exact same order they are listed. Provide only the values, one per line, and do not include any other text.\n\n"
         f"{questions_text}\n\n"
-        "Answer with one value per line, matching the order of the keys above."
+        "Give only the correct answers and nothing else.\n\n"
     )
     return prompt, all_keys
