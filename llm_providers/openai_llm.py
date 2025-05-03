@@ -1,5 +1,5 @@
 # llm_providers/openai_llm.py
-import os, tiktoken
+import os, tiktoken, streamlit as st
 from openai import OpenAI
 from .base import LLMProvider
 from dotenv import load_dotenv
@@ -11,7 +11,12 @@ class OpenAIProvider(LLMProvider):
 
     def __init__(self):
         load_dotenv()
-        self._client   = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+        api_key = os.getenv("OPENAI_API_KEY")
+        if not api_key:
+            st.warning("OPENAI_API_KEY not found in environment – provider disabled.")
+            raise RuntimeError("Missing API key")
+        
+        self._client   = OpenAI(api_key=api_key)
         self._encoding = tiktoken.encoding_for_model(self.model_name)
 
     # --- interface ---

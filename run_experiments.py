@@ -61,7 +61,7 @@ def run_experiments(provider_module: str|None = None,
 
             for trial in range(trials):
                 facts, kv = generate_facts_k_tokens(num_facts, k, vocab)
-                prompt, keys = build_prompt_for_all_keys(facts)
+                prompt, keys = build_prompt_for_all_keys(facts, k=k)
 
                 try:
                     answer = llm.query(prompt, temperature=0.0)

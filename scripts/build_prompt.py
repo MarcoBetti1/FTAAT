@@ -1,27 +1,31 @@
+"""
+Prompt builder – Jinja2 powered.
+
+Any {{variable}} in prompt_template.j2 can be filled via `context` below.
+"""
+from pathlib import Path
 import random
+from jinja2 import Template
 
-def build_prompt_for_all_keys(facts_list):
+TPL = Template(Path("prompt_template.j2").read_text())
+
+def build_prompt_for_all_keys(facts_list, *, k: int | None = None):
     """
-    - Lists all facts in the prompt
-    - Then lists all keys in random order, requesting the correct values
-    in that same order.
-    Returns:
-       (prompt_str, question_keys_in_order)
+    facts_list : [(fact_line, key, value), ...]
+    k          : tokens per fact (passed in run_experiments)
+    Returns (prompt_str, keys_in_order)
     """
-    # Combine fact lines in a single block
-    facts_text = "\n".join(fact_line for (fact_line, _, _) in facts_list)
+    facts_block = "\n".join(f for (f,_,_) in facts_list)
 
-    # Extract keys in a random order
-    all_keys = [key for (_, key, _) in facts_list]
-    random.shuffle(all_keys)
+    keys = [k for (_,k,_) in facts_list]
+    random.shuffle(keys)
+    questions_block = "\n".join(keys)
 
-    questions_text = "\n".join(k for k in all_keys)
+    prompt = TPL.render(
+        facts_block     = facts_block,
+        questions_block = questions_block,
+        n               = len(facts_list),
+        k               = k,
+    ).strip() + "\n\n"
 
-    prompt = (
-        "Below are some arbitrary assignments of Key => Value:\n\n"
-        f"{facts_text}\n\n"
-        "Your task is to provide the correct Values for each of the following Keys in the exact same order they are listed. Provide only the values, one per line, and do not include any other text.\n\n"
-        f"{questions_text}\n\n"
-        "Give only the correct answers and nothing else.\n\n"
-    )
-    return prompt, all_keys
+    return prompt, keys

@@ -1,5 +1,5 @@
 # llm_providers/deepseek_llm.py
-import os, tiktoken
+import os, streamlit as st
 from openai import OpenAI     # DeepSeek’s API is OpenAI-compatible
 from .base import LLMProvider
 from dotenv import load_dotenv
@@ -17,7 +17,12 @@ class DeepSeekProvider(LLMProvider):
 
     def __init__(self):
         load_dotenv()
-        self._client = OpenAI(api_key=os.getenv("DEEPSEEK_API_KEY"),base_url="https://api.deepseek.com")
+        api_key = os.getenv("DEEPSEEK_API_KEY")
+        if not api_key:
+            st.warning("OPENAI_API_KEY not found in environment – provider disabled.")
+            raise RuntimeError("Missing API key")
+
+        self._client = OpenAI(api_key=api_key,base_url="https://api.deepseek.com")
         self._encoding = _encoder   
 
     def query(self, prompt: str, *, temperature: float = 0.0) -> str:

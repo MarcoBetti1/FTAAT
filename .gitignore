@@ -1,5 +1,7 @@
 __pycache__/
 
+*/__pycache__
+
 venv/
 
 .DS_Store
@@ -10,18 +12,8 @@ results/
 
 experiment_logs/
 
-*/__pycache__
+scripts/__pycache__/
 
-experiment_logs
+llm_providers/__pycache__/
 
-test.ipynb
-
-app.py
-
-db_utils.py     
-
-json_import.py      
-       
-token_diff.py        
-
-pages/
+experiments.db
