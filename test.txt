@@ -1,0 +1,30 @@
+Help design a way to test and or visualize the results of a fixed toke abstract attention test for llms. Summary:
+In one prompt we give first the context which includes the correct answers, and then list some questions. Context is key value pairs, and the questions are only keys. I have automated this test, I can now input parameters N and K to run multiple tests. N refers to the number of facts, and K refers to the length of each fact in tokens. For example, in the following examples, imagine every string in between the separators "|" is exactly 1 token in length and ill denote them like t1,t2,t3...:
+
+1n 5k:
+Context: t1|t2|t3|t4|t5 => t6|t7|t8|t9|t0
+Instruction: assign the correct value
+ t1|t2|t3|t4|t5
+
+Correct answer: t6|t7|t8|t9|t0
+
+Now 3n 2k:
+Context:
+t1|t2 => t3|t4
+t5|t6 => t7|t8
+t9|t10 => t11|t12
+
+Instruction: assign the correct value:
+
+t1|t2 
+t5|t6
+t9|t10
+
+Correct answer:
+t3|t4
+t7|t8
+t11|t12
+
+Now you know how different n and k values affect the test. It might seem pointless, try to think of it as testing the llm on the balance between size of items to remember and quantity of items to remember. 
+
+Where you come in.

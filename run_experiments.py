@@ -1,40 +1,42 @@
-"""
-Run the benchmark with any provider that implements llm_providers.base.LLMProvider.
-"""
+import json, importlib
 from datetime import datetime
 from pathlib import Path
-import json, importlib
+from time import perf_counter
 
 from scripts.fact_gen       import generate_facts_k_tokens
 from scripts.build_prompt   import build_prompt_for_all_keys
 from scripts.eval           import evaluate_token_sequences
 from token_utils            import build_single_token_vocab
 
-# -------------- generic grading, unchanged except for tokenizer inject ------
-def grade_response(response_text, question_keys_in_order, key_value_dict, *,
-                   tokenizer):
-    major_format_flaw = response_text[0].isalpha() and not response_text[-1].isalpha()
-    
-    # expected + student answers
+def grade_response(response_text, question_keys_in_order, key_value_dict, *, tokenizer):
     correct_seqs = [key_value_dict[k] for k in question_keys_in_order]
     response_seqs = [ln.strip() for ln in response_text.splitlines() if ln.strip()]
 
     expected_tokens = sum(tokenizer(seq) for seq in correct_seqs)
     response_tokens = sum(tokenizer(seq) for seq in response_seqs)
 
-    seq_acc, tok_acc = evaluate_token_sequences(response_seqs, correct_seqs)
+    major_format_flaw = False
+    if response_tokens > expected_tokens + expected_tokens*0.25 or response_tokens < expected_tokens - expected_tokens*0.25:
+        print("large token differential")
+        major_format_flaw = True
+    if not response_text[0].isalpha() or not response_text[-1].isalpha():
+        print("first or last char not a-z")
+        major_format_flaw = True
+
+    if not major_format_flaw:
+        seq_acc, tok_acc = evaluate_token_sequences(response_seqs, correct_seqs)
+    else:
+        print("major format flaw skipping eval")
+        seq_acc, tok_acc = 0.0, 0.0
     return (seq_acc, tok_acc), major_format_flaw, expected_tokens, response_tokens
-# ---------------------------------------------------------------------------
+
 
 def run_experiments(provider_module: str|None = None,
                     facts_list_sizes=[3, 6],
                     token_sizes=[2, 3],
                     trials=1,
-                    output_root="results"):
-    """
-    provider_module – dotted import path, e.g. 'llm_providers.deepseek_llm.DeepSeekProvider'
-    """
-    # instantiate backend
+                    output_root="results",
+                    verbose=True):
     mod_path, cls_name = provider_module.rsplit(".", 1)
     ProviderClass = getattr(importlib.import_module(mod_path), cls_name)
     llm = ProviderClass()
@@ -58,13 +60,21 @@ def run_experiments(provider_module: str|None = None,
             }
 
             for trial in range(trials):
+                if verbose:
+                    print(f"Trial: {trial}")
                 facts, kv = generate_facts_k_tokens(num_facts, k, vocab)
                 prompt, keys = build_prompt_for_all_keys(facts, k=k)
 
+                if verbose:
+                    print("Prompt set up")
+                t0 = perf_counter()
                 try:
                     answer = llm.query(prompt, temperature=0.0)
                 except Exception as e:
                     answer = f"ERROR: {e}"
+                t1 = perf_counter()
+                if verbose:
+                    print(f"Answer received in {t1 - t0:.3f} sec")
 
                 correct_text = "\n".join(kv[k] for k in keys)
 
