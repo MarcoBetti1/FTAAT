@@ -1,0 +1,54 @@
+{
+  "id": "deepseek-chat_60N_1K_combined",
+  "prompt_id": "default_prompt",
+  "provider": "deepseek",
+  "model": "deepseek-chat",
+  "num_facts": 60,
+  "k": 1,
+  "trials": [
+    {
+      "trial": 1,
+      "sequence_accuracy": 1.0,
+      "token_accuracy": 1.0,
+      "major_format_flaw": false,
+      "response_time_ms": 7830.137875047512,
+      "prompt_tokens": 490,
+      "prompt_text": "Below are 60 totally random Key => Value assignments, each 1 tokens long. Tokens within values are separated by \"|\":\n\n\neredith => stasy\nurning => pex\num => blad\nenable => donald\napanese => xin\ncharge => lake\nforming => alista\nrawd => zoa\netti => bright\nucky => spired\niter => iati\nrone => isa\nrie => estens\nartment => cutta\nnd => kong\nework => ously\ntop => racle\nfeedback => measure\nrecated => zelfde\nercase => oked\ndfs => onucle\nasking => emn\nunku => sex\nohm => etro\nientras => adjust\nnabla => opedic\nundefined => ccion\niers => dev\nwalker => arlow\nbar => verages\nowers => gere\npause => adaghan\nibraries => mw\nomie => countries\nsworth => asty\nbed => ooter\nanum => lares\nwan => enium\nann => gold\niven => ricanes\nhoek => mount\nvertices => ethe\nih => mesh\npng => uco\nashes => oslov\navis => raq\nelin => compar\nhman => urface\nustion => ulu\nogene => sych\nqualified => tasks\nya => bee\nmatics => uent\nticos => rati\nailable => rums\ntang => hingga\nmana => avel\nuci => od\nlayer => epen\ncin => urch\n\nYour task is to provide the correct Values for each of the following Keys in the exact same order they are listed. Provide only the entire value sequence, including separators. Give your answers one per line and do not include any other text.\n\ncharge\nrecated\nnabla\nya\ntang\nenable\nasking\nowers\nnd\nlayer\nailable\npause\nwan\nvertices\nhman\nohm\nartment\nanum\nforming\nogene\nann\nmana\nwalker\niers\ntop\napanese\nibraries\nework\npng\nrie\netti\nfeedback\niter\nih\nbar\nrawd\nunku\ncin\nuci\ndfs\navis\neredith\nqualified\niven\nmatics\nundefined\nercase\nashes\nelin\nustion\nsworth\nrone\num\nurning\nhoek\nucky\nbed\nticos\nomie\nientras\n\nGive only the correct answers and nothing else.\n\n",
+      "response_text": "lake\nzelfde\nopedic\nbee\nhingga\ndonald\nemn\ngere\nkong\nepen\nrums\nadaghan\nenium\nethe\nurface\netro\ncutta\nlares\nalista\nsych\ngold\navel\narlow\ndev\nracle\nxin\nmw\nously\nuco\nestens\nbright\nmeasure\niati\nmesh\nverages\nzoa\nsex\nurch\nod\nonucle\nraq\nstasy\ntasks\nricanes\nuent\nccion\noked\noslov\ncompar\nulu\nasty\nisa\nblad\npex\nmount\nspired\nooter\nrati\ncountries\nadjust",
+      "response_token_count": 60,
+      "expected_response_text": "lake\nzelfde\nopedic\nbee\nhingga\ndonald\nemn\ngere\nkong\nepen\nrums\nadaghan\nenium\nethe\nurface\netro\ncutta\nlares\nalista\nsych\ngold\navel\narlow\ndev\nracle\nxin\nmw\nously\nuco\nestens\nbright\nmeasure\niati\nmesh\nverages\nzoa\nsex\nurch\nod\nonucle\nraq\nstasy\ntasks\nricanes\nuent\nccion\noked\noslov\ncompar\nulu\nasty\nisa\nblad\npex\nmount\nspired\nooter\nrati\ncountries\nadjust",
+      "expected_token_count": 60
+    },
+    {
+      "trial": 2,
+      "sequence_accuracy": 0.8833333333333333,
+      "token_accuracy": 0.8983050847457628,
+      "major_format_flaw": false,
+      "response_time_ms": 9335.317832999863,
+      "prompt_tokens": 488,
+      "prompt_text": "Below are 60 totally random Key => Value assignments, each 1 tokens long. Tokens within values are separated by \"|\":\n\n\nnamed => claimer\nquir => oglobin\nwashing => aon\nilai => arcode\nisons => untos\ncommons => ivable\nennett => ammen\ncancel => ogie\njj => nest\nategy => agem\neno => box\nadow => atrix\nobu => aat\nhlen => lake\nsheets => ozilla\nregistry => sek\ncamp => oplasmic\nraj => ression\nuing => alohany\nvez => anship\nfib => venirs\numn => emplo\nouncing => epers\nmoz => occo\nce => remarks\nedd => viation\ntruth => versions\nsample => ml\notypes => hadow\nreate => lean\nride => ru\nder => court\nresc => ilden\nillusion => ije\ncode => aging\nationally => craft\nsender => ostic\navar => ades\noxylic => oser\natus => name\noller => volt\nalkan => bast\nhrer => cimiento\ndelimited => ait\nurous => peating\nieniu => para\nitches => lya\nomonas => uen\nboats => orgung\nasmine => ombre\nalias => ild\nscroll => ening\nizi => spring\nphe => ayette\nammers => innamon\ncon => avers\nonese => newcommand\nyards => juven\nxj => otive\nranial => poll\n\nYour task is to provide the correct Values for each of the following Keys in the exact same order they are listed. Provide only the entire value sequence, including separators. Give your answers one per line and do not include any other text.\n\nsheets\nraj\nsender\navar\nscroll\nsample\ncode\nieniu\nresc\nmoz\nillusion\nuing\nalkan\nationally\nomonas\nquir\nizi\nboats\nedd\njj\nategy\nennett\nhlen\ncon\nammers\notypes\ncamp\nyards\nalias\nranial\noxylic\ndelimited\nphe\nvez\nitches\nhrer\nfib\nilai\nisons\neno\nreate\ncancel\numn\nder\nride\ntruth\natus\nnamed\nadow\nxj\nonese\nregistry\nwashing\nce\ncommons\nouncing\nasmine\nobu\nurous\noller\n\nGive only the correct answers and nothing else.\n\n",
+      "response_text": "ozilla\nression\nostic\nades\nening\nml\naging\npara\nilden\nocco\nije\nalohany\nbast\ncraft\nuen\noglobin\nspring\norgung\nviation\nnest\nagem\nammen\nlake\navers\ninnamon\nhadow\noplasmic\njuven\nild\npoll\noser\nait\nayette\nanship\nlya\ncimiento\nvenirs\narcode\nuntos\nbox\nlean\nogie\nemplo\ncourt\nru\nversions\nname\nclaimer\natrix\notive\nnewcommand\nsek\naon\nivable\nepers\nombre\naat\npeating\nvolt",
+      "response_token_count": 59,
+      "expected_response_text": "ozilla\nression\nostic\nades\nening\nml\naging\npara\nilden\nocco\nije\nalohany\nbast\ncraft\nuen\noglobin\nspring\norgung\nviation\nnest\nagem\nammen\nlake\navers\ninnamon\nhadow\noplasmic\njuven\nild\npoll\noser\nait\nayette\nanship\nlya\ncimiento\nvenirs\narcode\nuntos\nbox\nlean\nogie\nemplo\ncourt\nru\nversions\nname\nclaimer\natrix\notive\nnewcommand\nsek\naon\nremarks\nivable\nepers\nombre\naat\npeating\nvolt",
+      "expected_token_count": 60
+    },
+    {
+      "trial": 3,
+      "sequence_accuracy": 1.0,
+      "token_accuracy": 1.0,
+      "major_format_flaw": false,
+      "response_time_ms": 8213.745874993037,
+      "prompt_tokens": 487,
+      "prompt_text": "Below are 60 totally random Key => Value assignments, each 1 tokens long. Tokens within values are separated by \"|\":\n\n\nenzen => enko\nampuan => tanleria\ngons => ampu\nadoop => hadow\nificant => kel\nriot => trl\ninfected => zieh\ncar => uju\ncit => xa\nassing => verified\narsch => imeric\ndict => emes\niful => kernel\nvelope => liest\neko => pol\nhension => oneg\nsef => ieniem\nerty => ps\nrodu => cdot\noflife => arcinoma\notoxicity => elp\ninical => asking\north => ziej\narus => olini\nnonatomic => ber\nriqu => official\numinum => around\nkee => partial\nczna => hetically\nrolled => patterns\nfors => spun\nexcept => canic\nvideo => ictwo\ncentral => rift\nicated => alto\nnels => arter\niz => ce\nager => rex\napers => tiny\nilet => ppled\nzelfde => arle\nauth => azen\nneur => ombo\nihin => ulle\nyo => maal\nayashi => often\nksen => ieur\nvoy => yv\nabits => ocket\nsus => cznego\nmom => initialize\niju => sted\nletters => esehatan\nontaneous => side\ncephalus => keit\ngt => cznie\nbingkil => cheiden\nphis => gers\nvern => poke\nsein => erne\n\nYour task is to provide the correct Values for each of the following Keys in the exact same order they are listed. Provide only the entire value sequence, including separators. Give your answers one per line and do not include any other text.\n\nihin\ncephalus\nvoy\nsef\nexcept\notoxicity\nmom\nhension\ngons\nvelope\ncentral\nadoop\nksen\nfors\nphis\nczna\nneur\north\neko\nyo\nificant\nrodu\nletters\noflife\nampuan\nsus\narus\nayashi\nnels\numinum\niz\niful\nriqu\ncit\nvideo\nontaneous\nkee\nbingkil\nvern\nsein\nnonatomic\ncar\nicated\nauth\nrolled\nabits\narsch\napers\nriot\ndict\nzelfde\nenzen\ngt\nerty\nager\ninfected\ninical\nilet\nassing\niju\n\nGive only the correct answers and nothing else.\n\n",
+      "response_text": "ulle\nkeit\nyv\nieniem\ncanic\nelp\ninitialize\noneg\nampu\nliest\nrift\nhadow\nieur\nspun\ngers\nhetically\nombo\nziej\npol\nmaal\nkel\ncdot\nesehatan\narcinoma\ntanleria\ncznego\nolini\noften\narter\naround\nce\nkernel\nofficial\nxa\nictwo\nside\npartial\ncheiden\npoke\nerne\nber\nuju\nalto\nazen\npatterns\nocket\nimeric\ntiny\ntrl\nemes\narle\nenko\ncznie\nps\nrex\nzieh\nasking\nppled\nverified\nsted",
+      "response_token_count": 60,
+      "expected_response_text": "ulle\nkeit\nyv\nieniem\ncanic\nelp\ninitialize\noneg\nampu\nliest\nrift\nhadow\nieur\nspun\ngers\nhetically\nombo\nziej\npol\nmaal\nkel\ncdot\nesehatan\narcinoma\ntanleria\ncznego\nolini\noften\narter\naround\nce\nkernel\nofficial\nxa\nictwo\nside\npartial\ncheiden\npoke\nerne\nber\nuju\nalto\nazen\npatterns\nocket\nimeric\ntiny\ntrl\nemes\narle\nenko\ncznie\nps\nrex\nzieh\nasking\nppled\nverified\nsted",
+      "expected_token_count": 60
+    }
+  ],
+  "source_files": [
+    "deepseek-chat_60N_1K_20250508T215409.json",
+    "deepseek-chat_60N_1K_20250508T215353.json",
+    "deepseek-chat_60N_1K_20250508T215401.json"
+  ]
+}

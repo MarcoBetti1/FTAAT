@@ -6,7 +6,7 @@ class OllamaProvider(LLMProvider):
     
     provider_id = "ollama"
     model_name  = os.getenv("OLLAMA_MODEL", "llama3.2")
-    token_set_path = "data/tokens/llama3_tokens.json"
+    token_set_path = "tokens/llama3_tokens.json"
 
     def __init__(self, host: str = "http://localhost:11434"):
         self._url = f"{host}/api/generate"

@@ -1,0 +1,54 @@
+{
+  "id": "deepseek-chat_10N_9K_combined",
+  "prompt_id": "default_prompt",
+  "provider": "deepseek",
+  "model": "deepseek-chat",
+  "num_facts": 10,
+  "k": 9,
+  "trials": [
+    {
+      "trial": 1,
+      "sequence_accuracy": 1.0,
+      "token_accuracy": 1.0,
+      "major_format_flaw": false,
+      "response_time_ms": 10269.79529199889,
+      "prompt_tokens": 631,
+      "prompt_text": "Below are 10 totally random Key => Value assignments, each 9 tokens long. Tokens within values are separated by \"|\":\n\n\numbs|dux|piel|imbing|ikoa|uing|trans|ziehen|ctions => hor|inary|iatives|tas|articles|imentos|ielder|rafish|ocrates\narshall|ymoon|ructure|hb|jem|eland|plug|bast|sk => dings|rometry|fax|quiry|bo|iliation|actual|ultur|angang\nublik|lake|body|series|ro|ergent|iders|ailed|udian => bn|abwe|yto|headed|icie|thur|ilaren|orah|allic\ninsert|arta|ibrary|apping|ideon|tr|rast|unjukkan|itura => rene|spot|naissance|culosis|annes|bau|dashboard|lias|comes\nuttle|fest|kai|olean|bilt|terraform|hedron|aber|olland => ikoa|ckt|uz|widget|lein|igual|ayments|ilit|sun\navis|oster|het|fik|igas|utton|klore|iatives|proxy => cols|chnung|ricts|agos|expansion|hope|ocar|vre|vek\ndaughter|uccess|riott|bef|racking|examples|action|vert|bio => isions|iless|actorial|tti|sych|ocup|enum|idez|rism\ngling|utivo|esian|assert|omac|besar|kow|veld|ystem => wirk|imenti|vering|atoire|stars|cies|manent|kle|igus\npopular|ths|pei|ibid|divisions|ayers|aratus|achi|label => teachers|ispr|ircular|png|aon|ionale|tri|panies|endeley\nosyl|jury|hemer|rst|amping|atasi|communic|attia|apiro => cian|endo|colo|inol|itekt|atea|jug|otec|logue\n\nYour task is to provide the correct Values for each of the following Keys in the exact same order they are listed. Provide only the entire value sequence, including separators. Give your answers one per line and do not include any other text.\n\numbs|dux|piel|imbing|ikoa|uing|trans|ziehen|ctions\nublik|lake|body|series|ro|ergent|iders|ailed|udian\ngling|utivo|esian|assert|omac|besar|kow|veld|ystem\npopular|ths|pei|ibid|divisions|ayers|aratus|achi|label\ninsert|arta|ibrary|apping|ideon|tr|rast|unjukkan|itura\nuttle|fest|kai|olean|bilt|terraform|hedron|aber|olland\nosyl|jury|hemer|rst|amping|atasi|communic|attia|apiro\ndaughter|uccess|riott|bef|racking|examples|action|vert|bio\navis|oster|het|fik|igas|utton|klore|iatives|proxy\narshall|ymoon|ructure|hb|jem|eland|plug|bast|sk\n\nGive only the correct answers and nothing else.\n\n",
+      "response_text": "hor|inary|iatives|tas|articles|imentos|ielder|rafish|ocrates\nbn|abwe|yto|headed|icie|thur|ilaren|orah|allic\nwirk|imenti|vering|atoire|stars|cies|manent|kle|igus\nteachers|ispr|ircular|png|aon|ionale|tri|panies|endeley\nrene|spot|naissance|culosis|annes|bau|dashboard|lias|comes\nikoa|ckt|uz|widget|lein|igual|ayments|ilit|sun\ncian|endo|colo|inol|itekt|atea|jug|otec|logue\nisions|iless|actorial|tti|sych|ocup|enum|idez|rism\ncols|chnung|ricts|agos|expansion|hope|ocar|vre|vek\ndings|rometry|fax|quiry|bo|iliation|actual|ultur|angang",
+      "response_token_count": 170,
+      "expected_response_text": "hor|inary|iatives|tas|articles|imentos|ielder|rafish|ocrates\nbn|abwe|yto|headed|icie|thur|ilaren|orah|allic\nwirk|imenti|vering|atoire|stars|cies|manent|kle|igus\nteachers|ispr|ircular|png|aon|ionale|tri|panies|endeley\nrene|spot|naissance|culosis|annes|bau|dashboard|lias|comes\nikoa|ckt|uz|widget|lein|igual|ayments|ilit|sun\ncian|endo|colo|inol|itekt|atea|jug|otec|logue\nisions|iless|actorial|tti|sych|ocup|enum|idez|rism\ncols|chnung|ricts|agos|expansion|hope|ocar|vre|vek\ndings|rometry|fax|quiry|bo|iliation|actual|ultur|angang",
+      "expected_token_count": 170
+    },
+    {
+      "trial": 2,
+      "sequence_accuracy": 1.0,
+      "token_accuracy": 1.0,
+      "major_format_flaw": false,
+      "response_time_ms": 11969.88558396697,
+      "prompt_tokens": 632,
+      "prompt_text": "Below are 10 totally random Key => Value assignments, each 9 tokens long. Tokens within values are separated by \"|\":\n\n\nalahan|omot|orget|wert|hair|hydration|ods|icus|encephal => ophan|untu|rimp|iliated|apacity|opis|rowave|arguments|ulam\npres|ahy|ceding|absence|iad|ports|atched|enderita|bour => ophagus|dou|unctional|ipedia|early|sep|abits|keeper|izon\ntypical|nze|calf|unku|fficient|oyo|prav|function|ran => ecer|este|aris|ujud|handle|ionic|quel|izados|arthed\nustering|blocks|inguished|package|ajax|fit|agree|sr|sers => washer|verbal|zak|throw|ndan|enska|edly|asterxml|otions\nruvate|gonal|accord|ducted|gabe|aras|illus|amination|erial => ilians|media|oks|horm|ziej|gate|teg|ecurity|aktu\nningar|itr|ines|ib|opausal|frica|imper|netes|cole => surface|authent|perp|adora|scope|brief|oze|ifiques|ela\nchess|inian|wau|ixer|uncture|https|sys|aked|ultures => natal|ineries|instrument|cdn|weh|wns|kset|rene|zne\nigraphic|form|yel|ogon|prochen|urative|phis|logged|clip => untu|elle|ubbing|istos|ichia|popular|amins|ernen|cursor\nnasium|urn|ognitive|dur|kit|ordon|nome|ierp|thumb => ise|electronic|gression|irable|payment|coder|osine|erseys|afia\niore|avir|rencies|eme|gem|cego|endgroup|inians|ulyo => klar|rozum|rading|urin|ulty|xc|adora|antib|alski\n\nYour task is to provide the correct Values for each of the following Keys in the exact same order they are listed. Provide only the entire value sequence, including separators. Give your answers one per line and do not include any other text.\n\npres|ahy|ceding|absence|iad|ports|atched|enderita|bour\ntypical|nze|calf|unku|fficient|oyo|prav|function|ran\nnasium|urn|ognitive|dur|kit|ordon|nome|ierp|thumb\nchess|inian|wau|ixer|uncture|https|sys|aked|ultures\niore|avir|rencies|eme|gem|cego|endgroup|inians|ulyo\nruvate|gonal|accord|ducted|gabe|aras|illus|amination|erial\nigraphic|form|yel|ogon|prochen|urative|phis|logged|clip\nustering|blocks|inguished|package|ajax|fit|agree|sr|sers\nningar|itr|ines|ib|opausal|frica|imper|netes|cole\nalahan|omot|orget|wert|hair|hydration|ods|icus|encephal\n\nGive only the correct answers and nothing else.\n\n",
+      "response_text": "ophagus|dou|unctional|ipedia|early|sep|abits|keeper|izon\necer|este|aris|ujud|handle|ionic|quel|izados|arthed\nise|electronic|gression|irable|payment|coder|osine|erseys|afia\nnatal|ineries|instrument|cdn|weh|wns|kset|rene|zne\nklar|rozum|rading|urin|ulty|xc|adora|antib|alski\nilians|media|oks|horm|ziej|gate|teg|ecurity|aktu\nuntu|elle|ubbing|istos|ichia|popular|amins|ernen|cursor\nwasher|verbal|zak|throw|ndan|enska|edly|asterxml|otions\nsurface|authent|perp|adora|scope|brief|oze|ifiques|ela\nophan|untu|rimp|iliated|apacity|opis|rowave|arguments|ulam",
+      "response_token_count": 170,
+      "expected_response_text": "ophagus|dou|unctional|ipedia|early|sep|abits|keeper|izon\necer|este|aris|ujud|handle|ionic|quel|izados|arthed\nise|electronic|gression|irable|payment|coder|osine|erseys|afia\nnatal|ineries|instrument|cdn|weh|wns|kset|rene|zne\nklar|rozum|rading|urin|ulty|xc|adora|antib|alski\nilians|media|oks|horm|ziej|gate|teg|ecurity|aktu\nuntu|elle|ubbing|istos|ichia|popular|amins|ernen|cursor\nwasher|verbal|zak|throw|ndan|enska|edly|asterxml|otions\nsurface|authent|perp|adora|scope|brief|oze|ifiques|ela\nophan|untu|rimp|iliated|apacity|opis|rowave|arguments|ulam",
+      "expected_token_count": 170
+    },
+    {
+      "trial": 3,
+      "sequence_accuracy": 1.0,
+      "token_accuracy": 1.0,
+      "major_format_flaw": false,
+      "response_time_ms": 9927.351250022184,
+      "prompt_tokens": 633,
+      "prompt_text": "Below are 10 totally random Key => Value assignments, each 9 tokens long. Tokens within values are separated by \"|\":\n\n\naghan|icano|chy|legate|initis|ception|zf|registry|ctive => uts|picker|abella|uly|osting|ch|angs|crumb|trigger\norgen|fed|analytic|robot|ity|print|yah|estens|sql => uali|ificador|last|arios|icial|nach|clamation|bera|ademic\nvenge|commun|ounted|annan|bg|cientific|oral|ochastic|eed => asmus|sfc|obod|rily|eurs|lya|acid|akan|orative\nerdings|posted|oarthritis|ark|udence|ird|isti|unar|anca => naeus|bars|berg|currency|ebook|ieke|olic|reply|usch\nierz|asen|hension|bones|jonal|bring|aring|vento|unctional => icha|irection|aat|lightly|bug|pip|ylene|beck|balances\necimal|bitos|ritu|tham|cimiento|subject|conserv|machine|ienna => asar|itung|housing|engk|nach|uthor|etten|forcing|aer\nemiah|fighting|nn|compar|ricular|cki|rang|puts|ket => onse|usz|icorn|sql|arono|enca|ola|rer|epad\nki|fo|cio|sync|program|cher|ola|sequences|arsely => sam|ountain|verbal|cw|ivity|cji|iano|tr|ilitary\niced|thinking|iren|peror|feng|utation|abili|org|munition => metros|resc|upmu|links|atori|mmas|groups|antro|uckle\nanski|ernen|lungen|placement|intes|micro|num|clesi|unde => osas|ovina|ently|imm|orman|inition|itled|ardt|dis\n\nYour task is to provide the correct Values for each of the following Keys in the exact same order they are listed. Provide only the entire value sequence, including separators. Give your answers one per line and do not include any other text.\n\nemiah|fighting|nn|compar|ricular|cki|rang|puts|ket\nvenge|commun|ounted|annan|bg|cientific|oral|ochastic|eed\naghan|icano|chy|legate|initis|ception|zf|registry|ctive\norgen|fed|analytic|robot|ity|print|yah|estens|sql\nki|fo|cio|sync|program|cher|ola|sequences|arsely\nierz|asen|hension|bones|jonal|bring|aring|vento|unctional\nanski|ernen|lungen|placement|intes|micro|num|clesi|unde\niced|thinking|iren|peror|feng|utation|abili|org|munition\nerdings|posted|oarthritis|ark|udence|ird|isti|unar|anca\necimal|bitos|ritu|tham|cimiento|subject|conserv|machine|ienna\n\nGive only the correct answers and nothing else.\n\n",
+      "response_text": "onse|usz|icorn|sql|arono|enca|ola|rer|epad\nasmus|sfc|obod|rily|eurs|lya|acid|akan|orative\nuts|picker|abella|uly|osting|ch|angs|crumb|trigger\nuali|ificador|last|arios|icial|nach|clamation|bera|ademic\nsam|ountain|verbal|cw|ivity|cji|iano|tr|ilitary\nicha|irection|aat|lightly|bug|pip|ylene|beck|balances\nosas|ovina|ently|imm|orman|inition|itled|ardt|dis\nmetros|resc|upmu|links|atori|mmas|groups|antro|uckle\nnaeus|bars|berg|currency|ebook|ieke|olic|reply|usch\nasar|itung|housing|engk|nach|uthor|etten|forcing|aer",
+      "response_token_count": 170,
+      "expected_response_text": "onse|usz|icorn|sql|arono|enca|ola|rer|epad\nasmus|sfc|obod|rily|eurs|lya|acid|akan|orative\nuts|picker|abella|uly|osting|ch|angs|crumb|trigger\nuali|ificador|last|arios|icial|nach|clamation|bera|ademic\nsam|ountain|verbal|cw|ivity|cji|iano|tr|ilitary\nicha|irection|aat|lightly|bug|pip|ylene|beck|balances\nosas|ovina|ently|imm|orman|inition|itled|ardt|dis\nmetros|resc|upmu|links|atori|mmas|groups|antro|uckle\nnaeus|bars|berg|currency|ebook|ieke|olic|reply|usch\nasar|itung|housing|engk|nach|uthor|etten|forcing|aer",
+      "expected_token_count": 170
+    }
+  ],
+  "source_files": [
+    "deepseek-chat_10N_9K_20250508T213426.json",
+    "deepseek-chat_10N_9K_20250508T213438.json",
+    "deepseek-chat_10N_9K_20250508T213448.json"
+  ]
+}

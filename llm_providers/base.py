@@ -13,7 +13,13 @@ class LLMProvider(ABC):
 
     # -------- runtime behaviour --------
     @abstractmethod
-    def query(self, prompt: str, *, temperature: float = 0.0) -> str:
+    def query(self, 
+    prompt: str,
+    *, 
+    temperature: float = 0.0,
+    max_tokens: int | None = None,   
+    timeout:    int | None = None   
+    ) -> str:
         ...
 
     # -------- tokenisation helpers --------

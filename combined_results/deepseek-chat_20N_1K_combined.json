@@ -1,0 +1,54 @@
+{
+  "id": "deepseek-chat_20N_1K_combined",
+  "prompt_id": "default_prompt",
+  "provider": "deepseek",
+  "model": "deepseek-chat",
+  "num_facts": 20,
+  "k": 1,
+  "trials": [
+    {
+      "trial": 1,
+      "sequence_accuracy": 1.0,
+      "token_accuracy": 1.0,
+      "major_format_flaw": false,
+      "response_time_ms": 5285.400457971264,
+      "prompt_tokens": 217,
+      "prompt_text": "Below are 20 totally random Key => Value assignments, each 1 tokens long. Tokens within values are separated by \"|\":\n\n\nementia => leitung\nrollers => affected\ndea => lov\nogenous => itecture\nmoid => images\ntes => bac\naltime => ito\nrafted => unya\niel => ificance\npathy => aros\nbeeld => parts\nanon => ead\nificates => addr\nctx => bye\nerner => isance\nkah => strap\nsuite => pe\nden => hops\njection => ographic\nplate => idung\n\nYour task is to provide the correct Values for each of the following Keys in the exact same order they are listed. Provide only the entire value sequence, including separators. Give your answers one per line and do not include any other text.\n\nrollers\nplate\nificates\nkah\npathy\njection\nerner\nanon\naltime\nbeeld\nementia\niel\nsuite\nden\ndea\ntes\nogenous\nmoid\nrafted\nctx\n\nGive only the correct answers and nothing else.\n\n",
+      "response_text": "affected\nidung\naddr\nstrap\naros\nographic\nisance\nead\nito\nparts\nleitung\nificance\npe\nhops\nlov\nbac\nitecture\nimages\nunya\nbye",
+      "response_token_count": 20,
+      "expected_response_text": "affected\nidung\naddr\nstrap\naros\nographic\nisance\nead\nito\nparts\nleitung\nificance\npe\nhops\nlov\nbac\nitecture\nimages\nunya\nbye",
+      "expected_token_count": 20
+    },
+    {
+      "trial": 2,
+      "sequence_accuracy": 1.0,
+      "token_accuracy": 1.0,
+      "major_format_flaw": false,
+      "response_time_ms": 5035.849583975505,
+      "prompt_tokens": 219,
+      "prompt_text": "Below are 20 totally random Key => Value assignments, each 1 tokens long. Tokens within values are separated by \"|\":\n\n\nucci => ricts\nwebsite => ession\nilians => og\nivo => flare\nodi => cell\nillusion => edar\nuke => ferential\nender => nginx\nlickr => seen\nyczne => emperature\nttp => essive\nteilung => eka\nclinical => iagn\nular => logos\naint => formin\nagog => ocent\nempre => mediate\nutet => woord\nlf => itches\nschnitt => rench\n\nYour task is to provide the correct Values for each of the following Keys in the exact same order they are listed. Provide only the entire value sequence, including separators. Give your answers one per line and do not include any other text.\n\naint\nucci\nempre\nlickr\nttp\nyczne\nagog\nillusion\nender\nclinical\nuke\nwebsite\nschnitt\nlf\nilians\nutet\nodi\nteilung\nivo\nular\n\nGive only the correct answers and nothing else.\n\n",
+      "response_text": "formin\nricts\nmediate\nseen\nessive\nemperature\nocent\nedar\nnginx\niagn\nferential\nession\nrench\nitches\nog\nwoord\ncell\neka\nflare\nlogos",
+      "response_token_count": 20,
+      "expected_response_text": "formin\nricts\nmediate\nseen\nessive\nemperature\nocent\nedar\nnginx\niagn\nferential\nession\nrench\nitches\nog\nwoord\ncell\neka\nflare\nlogos",
+      "expected_token_count": 20
+    },
+    {
+      "trial": 3,
+      "sequence_accuracy": 1.0,
+      "token_accuracy": 1.0,
+      "major_format_flaw": false,
+      "response_time_ms": 5530.998834001366,
+      "prompt_tokens": 222,
+      "prompt_text": "Below are 20 totally random Key => Value assignments, each 1 tokens long. Tokens within values are separated by \"|\":\n\n\nguides => ijani\nddd => sever\nabytes => idation\neda => ander\nitzer => children\nkol => culus\nimus => oxy\npair => awl\nphthalm => els\nppings => ourage\niano => uvre\nyler => rzez\nhya => aternity\naktiv => ughed\nominated => uccess\nugo => man\nolver => raga\nlibrary => lymp\nocer => anon\nacial => entu\n\nYour task is to provide the correct Values for each of the following Keys in the exact same order they are listed. Provide only the entire value sequence, including separators. Give your answers one per line and do not include any other text.\n\nugo\nhya\nominated\nabytes\neda\nimus\npair\nddd\niano\nacial\nkol\nolver\nphthalm\naktiv\nlibrary\nppings\nguides\nocer\nyler\nitzer\n\nGive only the correct answers and nothing else.\n\n",
+      "response_text": "man\naternity\nuccess\nidation\nander\noxy\nawl\nsever\nuvre\nentu\nculus\nraga\nels\nughed\nlymp\nourage\nijani\nanon\nrzez\nchildren",
+      "response_token_count": 20,
+      "expected_response_text": "man\naternity\nuccess\nidation\nander\noxy\nawl\nsever\nuvre\nentu\nculus\nraga\nels\nughed\nlymp\nourage\nijani\nanon\nrzez\nchildren",
+      "expected_token_count": 20
+    }
+  ],
+  "source_files": [
+    "deepseek-chat_20N_1K_20250508T213458.json",
+    "deepseek-chat_20N_1K_20250508T213453.json",
+    "deepseek-chat_20N_1K_20250508T213504.json"
+  ]
+}

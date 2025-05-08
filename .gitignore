@@ -17,3 +17,12 @@ scripts/__pycache__/
 llm_providers/__pycache__/
 
 experiments.db
+
+old_results_ignore/
+
+test.txt
+
+scripts/frontier_walker_backend.py
+
+pages/1_🚶‍♂️_Frontier_Walker.py
+

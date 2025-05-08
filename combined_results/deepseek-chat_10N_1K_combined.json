@@ -1,0 +1,54 @@
+{
+  "id": "deepseek-chat_10N_1K_combined",
+  "prompt_id": "default_prompt",
+  "provider": "deepseek",
+  "model": "deepseek-chat",
+  "num_facts": 10,
+  "k": 1,
+  "trials": [
+    {
+      "trial": 1,
+      "sequence_accuracy": 1.0,
+      "token_accuracy": 1.0,
+      "major_format_flaw": false,
+      "response_time_ms": 4030.9954159893095,
+      "prompt_tokens": 154,
+      "prompt_text": "Below are 10 totally random Key => Value assignments, each 1 tokens long. Tokens within values are separated by \"|\":\n\n\nlauf => ingu\norch => anguage\nritic => patrick\nircle => etted\nheden => why\nination => blatt\nrito => scriptions\nobook => cers\nmere => arn\nagrams => nama\n\nYour task is to provide the correct Values for each of the following Keys in the exact same order they are listed. Provide only the entire value sequence, including separators. Give your answers one per line and do not include any other text.\n\nrito\nircle\nheden\nination\nobook\norch\nritic\nlauf\nagrams\nmere\n\nGive only the correct answers and nothing else.\n\n",
+      "response_text": "scriptions\netted\nwhy\nblatt\ncers\nanguage\npatrick\ningu\nnama\narn",
+      "response_token_count": 10,
+      "expected_response_text": "scriptions\netted\nwhy\nblatt\ncers\nanguage\npatrick\ningu\nnama\narn",
+      "expected_token_count": 10
+    },
+    {
+      "trial": 2,
+      "sequence_accuracy": 1.0,
+      "token_accuracy": 1.0,
+      "major_format_flaw": false,
+      "response_time_ms": 3988.9336670166813,
+      "prompt_tokens": 152,
+      "prompt_text": "Below are 10 totally random Key => Value assignments, each 1 tokens long. Tokens within values are separated by \"|\":\n\n\nilated => anic\nelf => ests\ndim => egy\nalto => ig\nanum => arked\nms => akk\nomeric => neutral\nculus => roduction\ntable => uls\noice => oing\n\nYour task is to provide the correct Values for each of the following Keys in the exact same order they are listed. Provide only the entire value sequence, including separators. Give your answers one per line and do not include any other text.\n\noice\nomeric\nanum\nms\nalto\ndim\ntable\nilated\nculus\nelf\n\nGive only the correct answers and nothing else.\n\n",
+      "response_text": "oing\nneutral\narked\nakk\nig\negy\nuls\nanic\nroduction\nests",
+      "response_token_count": 10,
+      "expected_response_text": "oing\nneutral\narked\nakk\nig\negy\nuls\nanic\nroduction\nests",
+      "expected_token_count": 10
+    },
+    {
+      "trial": 3,
+      "sequence_accuracy": 1.0,
+      "token_accuracy": 1.0,
+      "major_format_flaw": false,
+      "response_time_ms": 4211.6878750384785,
+      "prompt_tokens": 154,
+      "prompt_text": "Below are 10 totally random Key => Value assignments, each 1 tokens long. Tokens within values are separated by \"|\":\n\n\nigham => lemagne\nubro => arithm\ngeries => aghetti\nofen => vester\niliters => stud\naf => onese\nyards => gus\ngele => adders\nstyled => aceted\nsg => ifications\n\nYour task is to provide the correct Values for each of the following Keys in the exact same order they are listed. Provide only the entire value sequence, including separators. Give your answers one per line and do not include any other text.\n\nofen\naf\nyards\nigham\ngele\nstyled\nsg\niliters\ngeries\nubro\n\nGive only the correct answers and nothing else.\n\n",
+      "response_text": "vester\nonese\ngus\nlemagne\nadders\naceted\nifications\nstud\naghetti\narithm",
+      "response_token_count": 10,
+      "expected_response_text": "vester\nonese\ngus\nlemagne\nadders\naceted\nifications\nstud\naghetti\narithm",
+      "expected_token_count": 10
+    }
+  ],
+  "source_files": [
+    "deepseek-chat_10N_1K_20250508T213133.json",
+    "deepseek-chat_10N_1K_20250508T213137.json",
+    "deepseek-chat_10N_1K_20250508T213141.json"
+  ]
+}

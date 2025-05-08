@@ -1,0 +1,54 @@
+{
+  "id": "deepseek-chat_10N_6K_combined",
+  "prompt_id": "default_prompt",
+  "provider": "deepseek",
+  "model": "deepseek-chat",
+  "num_facts": 10,
+  "k": 6,
+  "trials": [
+    {
+      "trial": 1,
+      "sequence_accuracy": 1.0,
+      "token_accuracy": 1.0,
+      "major_format_flaw": false,
+      "response_time_ms": 7925.336999993306,
+      "prompt_tokens": 451,
+      "prompt_text": "Below are 10 totally random Key => Value assignments, each 6 tokens long. Tokens within values are separated by \"|\":\n\n\njt|riend|ss|axon|arter|ilty => uvres|azing|uerte|ococcal|aza|nas\nenz|oit|arsch|iqu|dis|cimiento => ilingual|price|san|igneur|interested|omar\ngaben|ite|ductory|hua|emment|emes => slow|vig|da|covered|daughter|peat\ncountries|aghetti|tti|fran|umm|rices => ict|esus|alais|ublik|alpha|lists\nquoi|apen|pic|iewicz|hz|olo => tri|demo|empo|atorial|aille|typically\nacus|neur|ficulty|romise|arde|porte => isol|iothe|oting|olate|igenous|ligt\nman|acs|verb|rezent|acet|obility => olerance|vectors|navigation|ursion|ographics|ended\nowan|regnant|aktu|gary|porter|sy => mg|asper|oca|avad|emet|organism\nffield|unning|inha|flat|appa|odiazep => ek|urally|itattu|atable|igration|ird\nfait|ogenes|for|them|eared|agna => then|agles|enceg|decl|ening|cliffe\n\nYour task is to provide the correct Values for each of the following Keys in the exact same order they are listed. Provide only the entire value sequence, including separators. Give your answers one per line and do not include any other text.\n\nowan|regnant|aktu|gary|porter|sy\ncountries|aghetti|tti|fran|umm|rices\nffield|unning|inha|flat|appa|odiazep\nquoi|apen|pic|iewicz|hz|olo\njt|riend|ss|axon|arter|ilty\ngaben|ite|ductory|hua|emment|emes\nfait|ogenes|for|them|eared|agna\nacus|neur|ficulty|romise|arde|porte\nman|acs|verb|rezent|acet|obility\nenz|oit|arsch|iqu|dis|cimiento\n\nGive only the correct answers and nothing else.\n\n",
+      "response_text": "mg|asper|oca|avad|emet|organism\nict|esus|alais|ublik|alpha|lists\nek|urally|itattu|atable|igration|ird\ntri|demo|empo|atorial|aille|typically\nuvres|azing|uerte|ococcal|aza|nas\nslow|vig|da|covered|daughter|peat\nthen|agles|enceg|decl|ening|cliffe\nisol|iothe|oting|olate|igenous|ligt\nolerance|vectors|navigation|ursion|ographics|ended\nilingual|price|san|igneur|interested|omar",
+      "response_token_count": 110,
+      "expected_response_text": "mg|asper|oca|avad|emet|organism\nict|esus|alais|ublik|alpha|lists\nek|urally|itattu|atable|igration|ird\ntri|demo|empo|atorial|aille|typically\nuvres|azing|uerte|ococcal|aza|nas\nslow|vig|da|covered|daughter|peat\nthen|agles|enceg|decl|ening|cliffe\nisol|iothe|oting|olate|igenous|ligt\nolerance|vectors|navigation|ursion|ographics|ended\nilingual|price|san|igneur|interested|omar",
+      "expected_token_count": 110
+    },
+    {
+      "trial": 2,
+      "sequence_accuracy": 0.9,
+      "token_accuracy": 0.9833333333333333,
+      "major_format_flaw": false,
+      "response_time_ms": 8542.335040983744,
+      "prompt_tokens": 452,
+      "prompt_text": "Below are 10 totally random Key => Value assignments, each 6 tokens long. Tokens within values are separated by \"|\":\n\n\ndeterm|ooks|delimited|mu|idepress|usamm => columns|ential|aturally|tc|directory|remove\nandez|geving|angular|ondere|ouz|ess => ructured|ring|ione|itung|athon|abei\nachelors|consistent|okens|iful|inek|enser => prefix|uthorized|ician|atie|ellus|chial\nformatics|usztus|iri|abels|ix|ativo => osaurus|derr|ziako|iguous|ativen|inger\nengaruhi|ementia|riber|juven|putation|note => ienced|ogene|ublique|kids|ubre|eti\nbones|facebook|iales|auer|uracies|para => quo|fran|rid|engers|empre|continued\nomatous|mons|custom|emary|ized|mins => original|tyw|kel|opot|ihara|elijk\nstyles|ato|ichtet|ublik|unya|bug => razioa|ura|shore|anke|cult|ande\nastrous|ifically|hetto|akin|rapping|acre => uku|qs|px|tant|opically|indsight\ngly|protocol|elp|segment|reasonable|wana => ioni|aryl|num|ynn|bond|acho\n\nYour task is to provide the correct Values for each of the following Keys in the exact same order they are listed. Provide only the entire value sequence, including separators. Give your answers one per line and do not include any other text.\n\nachelors|consistent|okens|iful|inek|enser\nstyles|ato|ichtet|ublik|unya|bug\nandez|geving|angular|ondere|ouz|ess\nbones|facebook|iales|auer|uracies|para\ndeterm|ooks|delimited|mu|idepress|usamm\nengaruhi|ementia|riber|juven|putation|note\nomatous|mons|custom|emary|ized|mins\nastrous|ifically|hetto|akin|rapping|acre\ngly|protocol|elp|segment|reasonable|wana\nformatics|usztus|iri|abels|ix|ativo\n\nGive only the correct answers and nothing else.\n\n",
+      "response_text": "prefix|uthorized|ician|atie|ellus|chial\nrazoia|ura|shore|anke|cult|ande\nructured|ring|ione|itung|athon|abei\nquo|fran|rid|engers|empre|continued\ncolumns|ential|aturally|tc|directory|remove\nienced|ogene|ublique|kids|ubre|eti\noriginal|tyw|kel|opot|ihara|elijk\nuku|qs|px|tant|opically|indsight\nioni|aryl|num|ynn|bond|acho\nosaurus|derr|ziako|iguous|ativen|inger",
+      "response_token_count": 112,
+      "expected_response_text": "prefix|uthorized|ician|atie|ellus|chial\nrazioa|ura|shore|anke|cult|ande\nructured|ring|ione|itung|athon|abei\nquo|fran|rid|engers|empre|continued\ncolumns|ential|aturally|tc|directory|remove\nienced|ogene|ublique|kids|ubre|eti\noriginal|tyw|kel|opot|ihara|elijk\nuku|qs|px|tant|opically|indsight\nioni|aryl|num|ynn|bond|acho\nosaurus|derr|ziako|iguous|ativen|inger",
+      "expected_token_count": 110
+    },
+    {
+      "trial": 3,
+      "sequence_accuracy": 1.0,
+      "token_accuracy": 1.0,
+      "major_format_flaw": false,
+      "response_time_ms": 8067.978915991262,
+      "prompt_tokens": 453,
+      "prompt_text": "Below are 10 totally random Key => Value assignments, each 6 tokens long. Tokens within values are separated by \"|\":\n\n\nauh|epat|zia|othy|rags|aucer => bones|moid|lena|berman|rins|bles\ntained|forge|egd|vene|earth|anship => alf|alms|raud|lek|esophageal|rych\nificial|retched|oths|embang|yata|action => case|pur|henols|update|training|azz\naded|ynku|arana|enn|turn|validation => times|uristic|xim|ignac|ersi|mes\nesus|utors|stellen|html|oween|illery => osaurs|aned|itches|zcz|optic|crew\nukiran|ibid|bones|rames|mium|itled => irements|rif|eties|armed|oc|hanced\nheastern|ditional|petto|urgical|mi|zheimer => annes|jar|millan|unned|race|foo\nariah|could|visited|ymes|arct|aint => istique|emperature|etro|ophone|iola|exec\npertensive|ggle|occo|resso|scanf|qt => endants|position|fee|obbies|cript|rices\nbted|sig|porter|enders|cribing|zez => itecture|erg|chess|tests|egen|writer\n\nYour task is to provide the correct Values for each of the following Keys in the exact same order they are listed. Provide only the entire value sequence, including separators. Give your answers one per line and do not include any other text.\n\naded|ynku|arana|enn|turn|validation\nbted|sig|porter|enders|cribing|zez\nheastern|ditional|petto|urgical|mi|zheimer\nukiran|ibid|bones|rames|mium|itled\nauh|epat|zia|othy|rags|aucer\nesus|utors|stellen|html|oween|illery\nificial|retched|oths|embang|yata|action\nariah|could|visited|ymes|arct|aint\npertensive|ggle|occo|resso|scanf|qt\ntained|forge|egd|vene|earth|anship\n\nGive only the correct answers and nothing else.\n\n",
+      "response_text": "times|uristic|xim|ignac|ersi|mes\nitecture|erg|chess|tests|egen|writer\nannes|jar|millan|unned|race|foo\nirements|rif|eties|armed|oc|hanced\nbones|moid|lena|berman|rins|bles\nosaurs|aned|itches|zcz|optic|crew\ncase|pur|henols|update|training|azz\nistique|emperature|etro|ophone|iola|exec\nendants|position|fee|obbies|cript|rices\nalf|alms|raud|lek|esophageal|rych",
+      "response_token_count": 110,
+      "expected_response_text": "times|uristic|xim|ignac|ersi|mes\nitecture|erg|chess|tests|egen|writer\nannes|jar|millan|unned|race|foo\nirements|rif|eties|armed|oc|hanced\nbones|moid|lena|berman|rins|bles\nosaurs|aned|itches|zcz|optic|crew\ncase|pur|henols|update|training|azz\nistique|emperature|etro|ophone|iola|exec\nendants|position|fee|obbies|cript|rices\nalf|alms|raud|lek|esophageal|rych",
+      "expected_token_count": 110
+    }
+  ],
+  "source_files": [
+    "deepseek-chat_10N_6K_20250508T213321.json",
+    "deepseek-chat_10N_6K_20250508T213313.json",
+    "deepseek-chat_10N_6K_20250508T213304.json"
+  ]
+}

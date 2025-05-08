@@ -1,7 +1,7 @@
 import streamlit as st
 import os
-from pages.util.db_utils import get_conn
-from pages.util.discover import discover_providers
+from core.db_utils import get_conn
+from core.discover import discover_providers
 
 st.set_page_config(page_title="FTAT Workbench", layout="wide")
 get_conn()                   # ensure DB is ready
