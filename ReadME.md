@@ -13,12 +13,7 @@ Notebooks for reference:
 `prompt_template.j2`
 This contains the formatting and instruciton text that the prompt is built from. Some variables can be added such as N and K.
 
-### TODO
 
-On fresh repository clone. maybe include small smaple token for 1 model. But on first app launhc, check for .env. If none alert user and create one with template and fillers.\\
-
-
-
-### FIX:
+### BUGS:
 Deepseek take so long???
 
