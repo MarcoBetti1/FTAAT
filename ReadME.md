@@ -1,5 +1,5 @@
 ### FIXED TOKEN ABSTRACT ATTENTION TEST (FTAAT)
-Automated python code that supports automatic prompting and grading to deepseek and openai API. 
+Automated python code that implements automatic prompting and grading to deepseek & openai API. 
 I would suggest not using the streamlit aspect as its not complete.
 
 
