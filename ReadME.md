@@ -1,6 +1,6 @@
 ### FIXED TOKEN ABSTRACT ATTENTION TEST (FTAAT)
 Automated python code that supports automatic prompting and grading to deepseek and openai API. 
-I got sidetracked and started to make a streamlit interface for every aspect (token generation, experiment running, data visualization) but I did not complete it. I would suggest not using the streamlit function. 
+I would suggest not using the streamlit aspect as its not complete.
 
 
 Notebooks for reference:
