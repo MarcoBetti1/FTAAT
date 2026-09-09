@@ -1,0 +1,58 @@
+{
+  "status": "passed",
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
+  "duration_seconds": 446.73333333333335,
+  "bytes": 20564041,
+  "sha256": "1b66ab1fb39fc78026f3c8eb1cff6ec96c14aedc7ba9ebc0aac9b4b2686e8390",
+  "full_decode": "passed",
+  "caption_cues": 132,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -2.2,
+  "audio": "AAC stereo 48 kHz",
+  "runs": [
+    {
+      "name": "v2-claude-format",
+      "responses": 64,
+      "cost_upper_usd": "0.24602750"
+    },
+    {
+      "name": "v2-claude-main",
+      "responses": 26,
+      "cost_upper_usd": "2.72248375"
+    },
+    {
+      "name": "v2-claude-smoke",
+      "responses": 4,
+      "cost_upper_usd": "0.00253000"
+    },
+    {
+      "name": "v2-openai-format",
+      "responses": 192,
+      "cost_upper_usd": "0.1284950500"
+    },
+    {
+      "name": "v2-openai-main",
+      "responses": 528,
+      "cost_upper_usd": "13.4268433000"
+    },
+    {
+      "name": "v2-openai-smoke",
+      "responses": 12,
+      "cost_upper_usd": "0.0012687500"
+    }
+  ],
+  "openai_experiment_cost_upper_usd": "13.5566071000",
+  "anthropic_experiment_cost_upper_usd": "2.97104125",
+  "speech_reserved_usd": "1.85",
+  "qa_reserved_usd": "0.254730000000000006",
+  "openai_total_bound_including_production_reservations": "15.661337100000000006",
+  "provider_caps": {
+    "openai": 20,
+    "anthropic": 5
+  },
+  "cost_note": "Experiment bounds and production reservations are not provider invoices.",
+  "visual_review": "Exported frames are generated for separate human/model inspection.",
+  "spoken_review": "ASR alignment and spoken numbers are reviewed separately; see spoken-review.json."
+}

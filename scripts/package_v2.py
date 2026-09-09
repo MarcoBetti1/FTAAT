@@ -24,7 +24,7 @@ def main():
     label(d,(118,457),'GPT vs CLAUDE',MINT,INK,43)
     pip(im,1250,148,1,660,'panic','panic')
     im=im.resize((1280,720),Image.Resampling.LANCZOS);im.save(DELIVERY/'thumbnail.jpg',quality=94,subsampling=0)
-    for name in ['GPT-Learning-01-v2.mp4','GPT-Learning-01-v2.en.srt','production-audit.json','spoken-review.json']:
+    for name in ['GPT-Learning-01-v2.mp4','GPT-Learning-01-v2.en.srt','production-audit.json','spoken-review.json','content-review.json']:
         shutil.copy2(MEDIA/name,DELIVERY/name)
     shutil.copytree(DOCS,DELIVERY/'report',dirs_exist_ok=True)
     # Draft/partial observations are never part of the final package.

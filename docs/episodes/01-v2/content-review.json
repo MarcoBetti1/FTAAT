@@ -1,0 +1,42 @@
+{
+  "status": "reviewed",
+  "review_method": "Compared the final per-clip ASR text with data-bound script sentences and immutable experiment evidence. Canonical model spellings and punctuation come from the reviewed script; ASR supplies timing.",
+  "headline_checks": [
+    {
+      "shot": "13_primary",
+      "finding": "GPT-4o Mini 2/32; Luna 32/32; shared fresh seeds and end position"
+    },
+    {
+      "shot": "15_positions",
+      "finding": "GPT-4o Mini 6/32 beginning, 7/32 middle, 2/32 end; descriptive"
+    },
+    {
+      "shot": "16_middle",
+      "finding": "GPT-4.1 Mini 31/32"
+    },
+    {
+      "shot": "17_claude",
+      "finding": "Claude Haiku 1/4, 1/4, 3/4; smaller panel explicitly labeled"
+    },
+    {
+      "shot": "23_two_scores",
+      "finding": "Haiku baseline two-hop: 0/16 exact, 16/16 correct final-line answers"
+    },
+    {
+      "shot": "25_reminder_result",
+      "finding": "Haiku two-hop: exact 0\u21921 of 16; final-line 16\u219216 of 16"
+    },
+    {
+      "shot": "27b_luna",
+      "finding": "Luna seed 4201 returns OHUC|GTTL, the revision-2 value, instead of revision-9 GUKO|LELZ"
+    },
+    {
+      "shot": "28_revision_result",
+      "finding": "Luna revisions 8\u219213 exact of 16; GPT-4o Mini 4\u21927"
+    }
+  ],
+  "audio_correction": "A nonessential omitted sentence in shot 19 was removed from the script and the clip regenerated. Per-clip transcription confirms the final supplied line.",
+  "timing_correction": "Final captions use per-clip ASR to resolve word spill across hard cuts in the initial whole-film ASR.",
+  "visual_review": "Reviewed representative frames extracted from all 35 scenes of the final encoded MP4, plus earlier storyboard and full-size detail checks. No clipped result labels, missing glyphs, or overlapping captions were found in those frames.",
+  "claims_limit": "This is ASR-assisted content review, not a claim that ASR proves every phoneme. Outcome claims remain constrained to the tested configurations."
+}
