@@ -6,7 +6,7 @@ an original educational video series, **GPT Learning**.
 
 **Episode 01 complete:** 373 observed API responses across seven models, including
 four smoke tests. [Read the report](docs/episodes/01/report.md) and
-[download the video and evidence](https://github.com/MarcoBetti1/FTAAT/releases/tag/episode-01).
+[download the evidence](https://github.com/MarcoBetti1/FTAAT/releases/tag/episode-01).
 
 Eight fresh long-context needle trials produced **GPT-4o Mini 0/8 versus GPT-5.6
 Luna 8/8** at roughly 111,000 input tokens. This is a small, selected-condition

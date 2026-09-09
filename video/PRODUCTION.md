@@ -46,8 +46,9 @@ The literal spoken long-case numbers have an assertion against the selected case
 The final motion pass draws type and graphics directly at 1920×1080. The MP4 is
 24 fps, H.264/AAC with fast-start metadata. Captions are
 burned in and provided separately as SRT. The voice and restrained original sound cues are mixed and normalized to approximately
-−16 LUFS with a −1.5 dB true-peak target before AAC encoding. The release also includes
-an original thumbnail, avatar and banner, the reviewed script, and raw evidence.
+−16 LUFS with a −1.5 dB true-peak target before AAC encoding. The local delivery includes an original thumbnail, captions and upload description.
+GitHub holds the reviewed script and raw evidence. The channel owner handles
+YouTube creation and video upload.
 
 ## Editorial boundaries
 
