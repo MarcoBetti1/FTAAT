@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "checks": {
+    "case_reproductions": 110,
+    "primary_response_regrades_unchanged": 373,
+    "returned_model_matches": 373,
+    "preflight_actual_input_matches": 373,
+    "ledgers_with_no_unsettled_requests": 5,
+    "secondary_format_labels_corrected": 12
+  },
+  "outcomes": {
+    "completed": 356,
+    "incomplete": 2,
+    "refusal": 15
+  },
+  "actual_input_token_range": [
+    143,
+    186127
+  ],
+  "source_commit": "417102b182371060b4760cdfd583bb3446ee6943",
+  "analysis_scoring_version": "score-v1.1",
+  "raw_ledger_sha256": {
+    "smoke-20260909": "1b3d340c5932e31cc22475a3596b0a62bb12318d6997e9492b0064df8a3f45d6",
+    "pilot-20260909": "7be2ad5ac5f0ecf2c308dd3f97246a6f9689380bc2a00db47c42fa60a503ec41",
+    "current-20260909": "ff5293ef95bc27a6b8298cee847e98c1bcd0ac2b31b4f89c02f16e0129d04876",
+    "long-20260909": "8ce32b30d2af0d5c281614b5c2603c01e6a200fd95c74a8d1053472b35df3dc4",
+    "confirm-20260909": "aaf8ad19f5869cb9838ac310981e7e13cc784d14190d2b784055ef4bca89c69f"
+  },
+  "note": "The experiment used the original scorer. Analysis corrects secondary UNKNOWN format labels only; original ledgers are unchanged."
+}

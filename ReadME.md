@@ -4,9 +4,14 @@ Reproducible games that probe where language models lose track of supplied infor
 Built from the **Fixed Token Abstract Attention Test (FTAAT)**, now being prepared for
 an original educational video series, **GPT Learning**.
 
-**Status:** offline-verified runner and production prototype. A live smoke test passed
-for all four pilot models on 2026-09-09; the first comparison campaign is underway.
-See the episode evidence bundle for completed results; do not infer a winner from a smoke test.
+**Episode 01 complete:** 373 observed API responses across seven models, including
+four smoke tests. [Read the report](docs/episodes/01/report.md) and
+[download the video and evidence](https://github.com/MarcoBetti1/FTAAT/releases/tag/episode-01).
+
+Eight fresh long-context needle trials produced **GPT-4o Mini 0/8 versus GPT-5.6
+Luna 8/8** at roughly 111,000 input tokens. This is a small, selected-condition
+comparison, not a general intelligence ranking. The report separates strict
+output failures, secondary formatting flags, incomplete responses and refusals.
 
 ## Run locally
 
@@ -87,8 +92,8 @@ and accounting could invalidate comparisons. It stops before making API calls an
 points to the new runner. Legacy grading helpers now penalize missing answers.
 Historical results need re-auditing and are not mixed into new experiments.
 
-`requirements-legacy-lock.txt` records the former environment; it is not the new
-installation path. Optional notebook dependencies are available through `.[legacy]`.
+`docs/audits/historical-environment.txt` records the former environment as an
+audit artifact, not an installation manifest. Those old pins contain known vulnerabilities. Optional notebook dependencies are available through `.[legacy]`.
 DeepSeek and Ollama adapters are historical, unverified integrations, outside this
 first OpenAI/Anthropic episode.
 
@@ -104,3 +109,17 @@ The runner currently uses a POSIX file lock (macOS/Linux). Windows needs a compa
 lock implementation before live use. Packaging is local; no PyPI release is claimed.
 No license was present in the original repository; no new open-source license has
 been selected. GitHub visibility is preserved.
+
+## Reproduce the episode analysis
+
+Extract the release evidence archive into this repository, then run:
+
+```bash
+python scripts/validate_episode.py results/smoke-20260909 results/pilot-20260909 results/current-20260909 results/long-20260909 results/confirm-20260909 --output artifacts/validation.json
+python scripts/episode_evidence.py results/pilot-20260909 results/current-20260909 results/long-20260909 results/confirm-20260909 --output artifacts/episode-evidence
+```
+
+These commands are offline. Original ledgers retain their experiment-time grades;
+analysis version `score-v1.1` corrects 12 secondary `UNKNOWN` format labels without
+changing any primary success score. [Video production instructions](video/PRODUCTION.md)
+cover the optional paid narration step and local render.

@@ -1,0 +1,95 @@
+{
+  "experiment_date": "2026-09-09",
+  "requested_total_budget_usd": 5,
+  "experiment_cost_upper_usd": "4.1370840625",
+  "voice_planning_allowance_usd": 0.65,
+  "runs": [
+    {
+      "run": "smoke-20260909",
+      "planned": 4,
+      "observed": 4,
+      "skipped": 0,
+      "not_attempted": 0,
+      "cost_upper_usd": "0.000425550"
+    },
+    {
+      "run": "pilot-20260909",
+      "planned": 264,
+      "observed": 264,
+      "skipped": 0,
+      "not_attempted": 0,
+      "cost_upper_usd": "0.2527929000"
+    },
+    {
+      "run": "current-20260909",
+      "planned": 45,
+      "observed": 45,
+      "skipped": 0,
+      "not_attempted": 0,
+      "cost_upper_usd": "1.06217500"
+    },
+    {
+      "run": "long-20260909",
+      "planned": 80,
+      "observed": 44,
+      "skipped": 2,
+      "not_attempted": 34,
+      "cost_upper_usd": "2.4313711375"
+    },
+    {
+      "run": "confirm-20260909",
+      "planned": 16,
+      "observed": 16,
+      "skipped": 0,
+      "not_attempted": 0,
+      "cost_upper_usd": "0.3903194750"
+    }
+  ],
+  "new_seed_confirmation": {
+    "task": "needle",
+    "n_records": 8192,
+    "record_depth": 0.9,
+    "seeds": [
+      2901,
+      2902,
+      2903,
+      2904,
+      2905,
+      2906,
+      2907,
+      2908
+    ],
+    "max_output_tokens": 256,
+    "scores": [
+      {
+        "model": "gpt-4o-mini-2024-07-18",
+        "exact": 0,
+        "n": 8,
+        "wilson95": [
+          0.0,
+          0.32440756488388023
+        ],
+        "input_tokens_min": 111389,
+        "input_tokens_max": 111556,
+        "statuses": {
+          "completed": 8
+        }
+      },
+      {
+        "model": "gpt-5.6-luna",
+        "exact": 8,
+        "n": 8,
+        "wilson95": [
+          0.6755924351161198,
+          1.0
+        ],
+        "input_tokens_min": 111388,
+        "input_tokens_max": 111555,
+        "statuses": {
+          "completed": 8
+        }
+      }
+    ]
+  },
+  "audio_qa_planning_allowance_usd": 0.2
+}

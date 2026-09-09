@@ -59,3 +59,13 @@ def test_symbol_denominator_and_intervals():
     assert wilson(3, 3)[0] < .5
     assert wilson(0, 3)[1] > .5
     assert wilson(100, 100)[0] > .95
+
+
+def test_unknown_is_a_valid_format_even_when_it_is_a_wrong_claim():
+    result = grade('UNKNOWN', ['ABCD|EFGH'], symbols_per_answer=2)
+    assert result['format_ok']
+    assert not result['exact']
+    assert result['sequence_accuracy'] == 0
+    # Conversely, an invented but correctly shaped code is not a format error.
+    result = grade('ABCD|EFGH', ['UNKNOWN'], symbols_per_answer=2)
+    assert result['format_ok'] and not result['exact']

@@ -59,7 +59,7 @@ normalization. Missing, extra, reordered or duplicated answer lines fail this en
 Secondary sequence and pipe-symbol scores use the entire expected denominator.
 A perfect prefix cannot get a perfect whole-trial score. Format validity is separate.
 No LLM judge is used. Responses with a non-completed API status are unscored and shown
-as other outcomes, not hidden. A response can be content-wrong but format-valid.
+as other outcomes, not hidden. A response can be content-wrong but format-valid. In scorer v1.1, UNKNOWN is a syntactically valid absence claim even if the fact exists; it must not inflate the formatting-failure count.
 
 95% Wilson intervals use independent seeds within a fixed model/task/N/K/depth/control
 cell. Answers within one recall response are correlated and not separate trials.
@@ -89,3 +89,9 @@ https://github.com/adobe-research/NoLiMa
 
 Our four games are an accessible experiment, not a claim to invent long-context evaluation.
 The original old runner's outputs are not trusted as new evidence without re-auditing.
+
+The secondary `format_ok` diagnostic checks line and pipe-delimited symbol counts,
+with `UNKNOWN` as a valid absence claim. It does not validate a complete lexical
+grammar: a three-letter invented symbol may retain the requested shape and still
+fail the primary exact score. A format flag is useful evidence of an output-contract
+problem; absence of a flag does not prove perfect formatting or correct retrieval.

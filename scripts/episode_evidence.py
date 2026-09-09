@@ -7,6 +7,7 @@ import re
 import sys
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from contextfrontier.runner import read_rows
+from contextfrontier.scoring import grade, VERSION
 
 
 def build(directories, output):
@@ -20,6 +21,10 @@ def build(directories, output):
         for row in read_rows(root/'events.jsonl'):
             if row['event']!='result': continue
             case=cases[row['case_id']]
+            row['stored_grade']=row['grade']
+            if row['reply']['status']=='completed':
+                row['grade']=grade(row['reply']['text'],case['expected'],symbols_per_answer=case['k'])
+            row['analysis_scoring_version']=VERSION
             item=dict(run=root.name,case=case,result=row)
             # Post-hoc editorial diagnostic, NOT a replacement for the prespecified score.
             # Merely mentioning an expected string does not guarantee it is the chosen answer.
@@ -27,24 +32,26 @@ def build(directories, output):
             item['expected_string_mentioned']=len(expected)==1 and bool(re.search(
                 r'(?<![A-Z|])'+re.escape(expected[0])+r'(?![A-Z|])',row['reply']['text']))
             records.append(item)
-            groups[(row['model'],case['task'],case['n'])].append(item)
+            groups[(root.name,row['model'],case['task'],case['n'])].append(item)
     summary=[]
-    for (model,task,n),items in sorted(groups.items()):
+    for (run_name,model,task,n),items in sorted(groups.items()):
         done=[i for i in items if i['result']['grade'] is not None]
         exact=sum(i['result']['grade']['exact'] for i in done)
         formats=sum(not i['result']['grade']['format_ok'] for i in done)
         mentioned=sum(i['expected_string_mentioned'] and not i['result']['grade']['exact'] for i in done)
-        summary.append(dict(model=model,task=task,n=n,completed=len(done),exact=exact,
+        summary.append(dict(run=run_name,model=model,task=task,n=n,completed=len(done),exact=exact,
                             format_failures=formats,expected_mentioned_but_not_exact=mentioned,
-                            other_outcomes=len(items)-len(done)))
-    bundle=dict(kind='observed_live_results',aggregation='Descriptive pooled counts, not independent-trial inference',
+                            other_outcomes=len(items)-len(done),
+                            refusals=sum(i['result']['reply']['status']=='refusal' for i in items),
+                            incomplete=sum(i['result']['reply']['status']=='incomplete' for i in items)))
+    bundle=dict(scoring_version=VERSION,kind='observed_live_results',aggregation='Descriptive pooled counts, not independent-trial inference',
                 diagnostic='Expected-string mention is post-hoc, not semantic correctness',summary=summary,records=records)
     (output/'evidence.json').write_text(json.dumps(bundle,indent=2)+'\n')
     lines=['# Episode evidence ledger','','Only observed live results. Strict score and post-hoc diagnostics are distinct.','',
-           '| Model | Game | N | Exact / completed | Format failures | Expected mentioned despite strict failure | Other |',
+           '| Run / Model | Game | N | Exact / completed | Format failures | Expected mentioned despite strict failure | Other (refusal / incomplete) |',
            '|---|---|---:|---:|---:|---:|---:|']
     for g in summary:
-        lines.append(f"| {g['model']} | {g['task']} | {g['n']} | {g['exact']}/{g['completed']} | {g['format_failures']} | {g['expected_mentioned_but_not_exact']} | {g['other_outcomes']} |")
+        lines.append(f"| {g['run']} / {g['model']} | {g['task']} | {g['n']} | {g['exact']}/{g['completed']} | {g['format_failures']} | {g['expected_mentioned_but_not_exact']} | {g['other_outcomes']} ({g['refusals']} / {g['incomplete']}) |")
     lines += ['', 'Counts pool depths for editorial overview only. Reused seeds make those requests correlated; see per-cell reports for intervals.','',
               '## Complete non-exact response audit','']
     for item in records:
@@ -63,12 +70,12 @@ def plot(bundle, output):
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt
     import numpy as np
-    rows=bundle['summary']; models=sorted({x['model'] for x in rows})
+    rows=bundle['summary']; models=sorted({x['run']+' / '+x['model'] for x in rows})
     cols=sorted({(x['task'],x['n']) for x in rows})
     data=np.full((len(models),len(cols)),np.nan)
     labels={}
     for r in rows:
-        i=models.index(r['model']); j=cols.index((r['task'],r['n']))
+        i=models.index(r['run']+' / '+r['model']); j=cols.index((r['task'],r['n']))
         if r['completed']: data[i,j]=r['exact']/r['completed']
         labels[i,j]=f"{r['exact']}/{r['completed']}\nformat: {r['format_failures']}"
     fig,ax=plt.subplots(figsize=(max(12,len(cols)*1.35),max(4,len(models)*.9)),layout='constrained')

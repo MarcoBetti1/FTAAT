@@ -1,0 +1,66 @@
+{
+  "version": "score-v1.1",
+  "primary_scores_changed": 0,
+  "format_labels_corrected": [
+    {
+      "request_key": "38d38b377dcebcc90d5f64e21f60bfebb93e8e672da481afbd36570c04c96002",
+      "model": "gpt-5.6-luna",
+      "response": "UNKNOWN"
+    },
+    {
+      "request_key": "9fe7c53d75b869270d9218089ab8eca7943dcda142190fe06af59c0ebaabe323",
+      "model": "gpt-5.6-luna",
+      "response": "UNKNOWN"
+    },
+    {
+      "request_key": "1d305d31dee83753e55d932c5dfe5432eb4c4e71e907ed5de93feffee0d6891e",
+      "model": "gpt-4o-mini-2024-07-18",
+      "response": "UNKNOWN"
+    },
+    {
+      "request_key": "c2eb388db28581f42a2f451f7f04ad7cc01cabcb6131dae58a8d754b2c0d00d0",
+      "model": "gpt-4o-mini-2024-07-18",
+      "response": "UNKNOWN"
+    },
+    {
+      "request_key": "cdfdbfbaab8b159c4085b2add7121334736e1aa7f9accafcc0330da9146f2d2c",
+      "model": "gpt-4o-mini-2024-07-18",
+      "response": "UNKNOWN"
+    },
+    {
+      "request_key": "e4b0285f713dce9b821cad16476d31a0ceb9795c16985c2fa6ae8f8d39dd624b",
+      "model": "gpt-4o-mini-2024-07-18",
+      "response": "UNKNOWN"
+    },
+    {
+      "request_key": "898fdfa5ea198dc0789b92e86a68659b2a93c4ac40441fc2fea9110c74315db0",
+      "model": "gpt-4o-mini-2024-07-18",
+      "response": "UNKNOWN"
+    },
+    {
+      "request_key": "7dcd01f7b7a328827786987d6b0a6c36f7c32391ff6482840c4573e3d24ca14e",
+      "model": "gpt-4o-mini-2024-07-18",
+      "response": "UNKNOWN"
+    },
+    {
+      "request_key": "90b9dbfac10becfc5b04348331e184e542c121af1c5fcc32e2938d04948b5d18",
+      "model": "gpt-4o-mini-2024-07-18",
+      "response": "UNKNOWN"
+    },
+    {
+      "request_key": "4ddf79ecd7406597cef0576e0812ea384c5e179fcd89664b6582631bb4e1c6a5",
+      "model": "gpt-4o-mini-2024-07-18",
+      "response": "UNKNOWN"
+    },
+    {
+      "request_key": "34c529b425304fa46e0c00e10c6a58c1641e3b4c828f19b289b004d60962fa68",
+      "model": "gpt-4o-mini-2024-07-18",
+      "response": "UNKNOWN"
+    },
+    {
+      "request_key": "ce0d752445206f2b2e4b8d91ad03399988500033733215b52dacc70250a359c6",
+      "model": "gpt-4o-mini-2024-07-18",
+      "response": "UNKNOWN"
+    }
+  ]
+}

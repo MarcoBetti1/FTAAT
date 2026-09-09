@@ -150,7 +150,7 @@ def _run_locked(config, cases, directory, budget, live, provider_factory):
                 actual_in, actual_out = usage_counts(spec["provider"], reply.usage)
                 # Conservative ceiling: all input at 1.25x ordinary rate covers short cache writes; cache reads cost less.
                 actual_cost = money(actual_in, spec["input_usd_per_million"]) * Decimal("1.25") + money(actual_out, spec["output_usd_per_million"])
-                scored = grade(reply.text, case.expected) if reply.status == "completed" else None
+                scored = grade(reply.text, case.expected, symbols_per_answer=case.k) if reply.status == "completed" else None
                 append(path, dict(event="result", at=now(), reply=asdict(reply), grade=scored,
                                   actual_input_tokens=actual_in, actual_output_tokens=actual_out,
                                   count_delta=actual_in-inp, cost_upper_usd=str(actual_cost), **meta))

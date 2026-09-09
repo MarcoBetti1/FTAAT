@@ -88,8 +88,14 @@ SCENES = [
 ]
 
 
+RENDER_SCALE = 1
+
+def canvas(image):
+    from canvas import Canvas
+    return Canvas(image,RENDER_SCALE)
+
 def frame(kind,title,subtitle,t,progress,index):
-    im=Image.new('RGB',(W,H),PAPER); d=ImageDraw.Draw(im)
+    im=Image.new('RGB',(round(W*RENDER_SCALE),round(H*RENDER_SCALE)),PAPER); d=canvas(im)
     # quiet registration marks and a consistent episode identity
     for x in range(32,W,32): d.point((x,36),fill='#D0CEC5')
     text(d,(55,40),'GPT LEARNING  /  BUREAU OF MISPLACED FACTS',15,bold=True)
@@ -192,16 +198,20 @@ def timestamp(sec):
 
 def main():
     parser=argparse.ArgumentParser(); parser.add_argument('--output',default='artifacts/video-preview')
-    parser.add_argument('--stills-only',action='store_true'); args=parser.parse_args()
+    parser.add_argument('--skip-mux',action='store_true'); parser.add_argument('--stills-only',action='store_true'); parser.add_argument('--voice-engine',choices=['local','openai'],default='local'); args=parser.parse_args()
     out=Path(args.output).resolve(); out.mkdir(parents=True,exist_ok=True)
     for i,(kind,title,narration) in enumerate(SCENES):
         frame(kind,title,narration.split('. ')[0]+'.',5,.5,i).save(out/f'scene-{i:02}.png')
     if args.stills_only: return
     timeline=[]
     for i,(kind,title,narration) in enumerate(SCENES):
-        txt=out/f'voice-{i:02}.txt'; audio=out/f'voice-{i:02}.aiff'
+        txt=out/f'voice-{i:02}.txt'; audio=out/f'voice-{i:02}.wav' if args.voice_engine=='openai' else out/f'voice-{i:02}.aiff'
         txt.write_text(narration)
-        subprocess.run(['say','-v','Daniel','-r','164','-f',str(txt),'-o',str(audio)],check=True)
+        if args.voice_engine=='openai':
+            from speech import render
+            render(narration,audio,out/'speech-cache')
+        else:
+            subprocess.run(['say','-v','Daniel','-r','164','-f',str(txt),'-o',str(audio)],check=True)
         duration=float(subprocess.check_output(['ffprobe','-v','error','-show_entries','format=duration','-of','default=nw=1:nk=1',str(audio)]))+.65
         timeline.append(dict(kind=kind,title=title,narration=narration,duration=duration,audio=str(audio)))
     total=sum(s['duration'] for s in timeline)
@@ -234,7 +244,8 @@ def main():
     audio=out/'narration.wav'
     subprocess.run(['ffmpeg','-y','-v','error','-f','concat','-safe','0','-i',str(concat),'-af','loudnorm=I=-16:TP=-1.5:LRA=11',str(audio)],check=True)
     final=out/'GPT-Learning-method-preview.mp4'
-    subprocess.run(['ffmpeg','-y','-v','error','-i',str(video),'-i',str(audio),'-vf','scale=1920:1080:flags=lanczos',
+    if not args.skip_mux:
+        subprocess.run(['ffmpeg','-y','-v','error','-i',str(video),'-i',str(audio),'-vf','scale=1920:1080:flags=lanczos',
                     '-c:v','libx264','-preset','fast','-crf','18','-c:a','aac','-b:a','192k','-pix_fmt','yuv420p','-movflags','+faststart','-shortest',str(final)],check=True)
     (out/'captions.srt').write_text('\n'.join(srt))
     (out/'timeline.json').write_text(json.dumps(timeline,indent=2))

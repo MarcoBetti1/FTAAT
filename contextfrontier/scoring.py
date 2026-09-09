@@ -2,7 +2,10 @@
 import math
 
 
-def grade(text, expected):
+VERSION = "score-v1.1"
+
+
+def grade(text, expected, *, symbols_per_answer=None):
     if not expected:
         raise ValueError("Expected answers cannot be empty")
     lines = text.strip().splitlines() if text.strip() else []
@@ -14,8 +17,11 @@ def grade(text, expected):
         actual = lines[i].split("|") if i < len(lines) else []
         matched_symbols += sum(j < len(actual) and actual[j] == sym
                                for j, sym in enumerate(answer.split("|")))
+    # Secondary shape diagnostic: line and pipe-delimited symbol counts only.
+    # It is not a full lexical grammar validator or a semantic correctness score.
     shape_ok = len(lines) == len(expected) and all(
-        len(a.split("|")) == len(b.split("|")) for a, b in zip(lines, expected))
+        (a == "UNKNOWN" or len(a.split("|")) == (symbols_per_answer or len(b.split("|"))))
+        for a, b in zip(lines, expected))
     return dict(exact=lines == expected, sequence_accuracy=matched / len(expected),
                 symbol_accuracy=matched_symbols / total_symbols, format_ok=shape_ok,
                 expected_lines=len(expected), received_lines=len(lines), matched_lines=matched)

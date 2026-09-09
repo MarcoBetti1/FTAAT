@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 
 from .runner import read_rows
-from .scoring import wilson
+from .scoring import wilson, grade, VERSION
 
 
 def report(directory):
@@ -17,6 +17,8 @@ def report(directory):
         if row["event"] not in ("result", "skipped", "error"):
             continue
         c = cases[row["case_id"]]
+        if row["event"] == "result" and row["reply"]["status"] == "completed":
+            row["grade"] = grade(row["reply"]["text"], c["expected"], symbols_per_answer=c["k"])
         key = (row["provider"], row["model"], c["task"], c["n"], c["k"], c["depth"], c["absent"])
         groups[key].append(row)
     output = []
@@ -36,7 +38,7 @@ def report(directory):
     reserved = {r["request_key"]: float(r["reserve_usd"]) for r in rows if r["event"] == "reserved"}
     settled = {r["request_key"]: float(r["cost_upper_usd"]) for r in rows if r["event"] == "result"}
     pending = set(reserved) - set(settled)
-    data = dict(live=manifest["live"], groups=output, case_count=len(cases),
+    data = dict(scoring_version=VERSION, live=manifest["live"], groups=output, case_count=len(cases),
                 terminal_requests=sum(len(x) for x in groups.values()),
                 unsettled_requests=len(pending), reserved_unsettled_usd=sum(reserved[k] for k in pending),
                 settled_cost_upper_usd=sum(settled.values()),
