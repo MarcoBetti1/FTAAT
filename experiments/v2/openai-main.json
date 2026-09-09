@@ -1,0 +1,153 @@
+{
+  "comparison": "same_text",
+  "order_seed": 20260910,
+  "suite": {
+    "version": "games-v2",
+    "blocks": [
+      {
+        "task": "needle",
+        "n": 128,
+        "seeds": [
+          4101,
+          4102,
+          4103,
+          4104,
+          4105,
+          4106,
+          4107,
+          4108
+        ],
+        "depths": [
+          0.1,
+          0.5,
+          0.9
+        ]
+      },
+      {
+        "task": "needle",
+        "n": 4096,
+        "seeds": [
+          4101,
+          4102,
+          4103,
+          4104,
+          4105,
+          4106,
+          4107,
+          4108,
+          4109,
+          4110,
+          4111,
+          4112,
+          4113,
+          4114,
+          4115,
+          4116
+        ],
+        "depths": [
+          0.1,
+          0.5,
+          0.9
+        ]
+      },
+      {
+        "task": "needle",
+        "n": 8192,
+        "seeds": [
+          4101,
+          4102,
+          4103,
+          4104,
+          4105,
+          4106,
+          4107,
+          4108,
+          4109,
+          4110,
+          4111,
+          4112,
+          4113,
+          4114,
+          4115,
+          4116,
+          4117,
+          4118,
+          4119,
+          4120,
+          4121,
+          4122,
+          4123,
+          4124,
+          4125,
+          4126,
+          4127,
+          4128,
+          4129,
+          4130,
+          4131,
+          4132
+        ],
+        "depths": [
+          0.1,
+          0.5,
+          0.9
+        ]
+      },
+      {
+        "task": "needle",
+        "n": 8192,
+        "seeds": [
+          4191,
+          4192,
+          4193,
+          4194,
+          4195,
+          4196,
+          4197,
+          4198
+        ],
+        "absent": true
+      }
+    ]
+  },
+  "models": [
+    {
+      "provider": "openai",
+      "model": "gpt-4o-mini-2024-07-18",
+      "input_usd_per_million": 0.15,
+      "output_usd_per_million": 0.6,
+      "context_window": 128000,
+      "max_output_tokens": 256,
+      "pricing_checked": "2026-09-09",
+      "pricing_source": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+      "temperature": 0,
+      "input_tokens_per_minute": 400000
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "input_usd_per_million": 0.4,
+      "output_usd_per_million": 1.6,
+      "context_window": 1047576,
+      "max_output_tokens": 256,
+      "pricing_checked": "2026-09-09",
+      "pricing_source": "https://developers.openai.com/api/docs/models/gpt-4.1-mini",
+      "temperature": 0,
+      "input_tokens_per_minute": 400000
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.6-luna",
+      "input_usd_per_million": 0.2,
+      "output_usd_per_million": 1.2,
+      "context_window": 1050000,
+      "max_output_tokens": 256,
+      "pricing_checked": "2026-09-09",
+      "pricing_source": "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
+      "reasoning_effort": "none",
+      "max_input_tokens": 922000,
+      "price_input_limit": 272000,
+      "input_tokens_per_minute": 400000
+    }
+  ]
+}

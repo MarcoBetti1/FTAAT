@@ -1,0 +1,62 @@
+{
+  "comparison": "same_text",
+  "order_seed": 20260910,
+  "suite": {
+    "version": "games-v2",
+    "blocks": [
+      {
+        "task": "needle",
+        "n": 128,
+        "seeds": [
+          4101,
+          4102,
+          4103,
+          4104
+        ],
+        "depths": [
+          0.1,
+          0.5,
+          0.9
+        ]
+      },
+      {
+        "task": "needle",
+        "n": 8192,
+        "seeds": [
+          4101,
+          4102,
+          4103,
+          4104
+        ],
+        "depths": [
+          0.1,
+          0.5,
+          0.9
+        ]
+      },
+      {
+        "task": "needle",
+        "n": 8192,
+        "seeds": [
+          4191,
+          4192
+        ],
+        "absent": true
+      }
+    ]
+  },
+  "models": [
+    {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001",
+      "input_usd_per_million": 1,
+      "output_usd_per_million": 5,
+      "context_window": 200000,
+      "max_output_tokens": 256,
+      "pricing_checked": "2026-09-09",
+      "pricing_source": "https://platform.claude.com/docs/en/models/overview",
+      "temperature": 0,
+      "input_tokens_per_minute": 250000
+    }
+  ]
+}

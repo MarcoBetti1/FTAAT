@@ -18,8 +18,11 @@ def report(directory):
             continue
         c = cases[row["case_id"]]
         if row["event"] == "result" and row["reply"]["status"] == "completed":
-            row["grade"] = grade(row["reply"]["text"], c["expected"], symbols_per_answer=c["k"])
-        key = (row["provider"], row["model"], c["task"], c["n"], c["k"], c["depth"], c["absent"])
+            scorer=grade
+            if c.get("version")=="games-v2":
+                from .scoring_v2 import grade as scorer
+            row["grade"] = scorer(row["reply"]["text"], c["expected"], symbols_per_answer=c["k"])
+        key = (row["provider"], row["model"], c["task"], c["n"], c["k"], c["depth"], c["absent"], json.dumps(c.get("conditions",{}),sort_keys=True))
         groups[key].append(row)
     output = []
     for key, trials in sorted(groups.items()):
@@ -27,8 +30,11 @@ def report(directory):
         exact = sum(r["grade"]["exact"] for r in successful)
         n = len(successful)
         failures = len(trials) - n
-        entry = dict(zip(("provider", "model", "task", "n_records", "k_symbols", "depth", "absent"), key))
-        entry.update(completed=n, other_outcomes=failures, exact_successes=exact,
+        entry = dict(zip(("provider", "model", "task", "n_records", "k_symbols", "depth", "absent"), key[:7]))
+        entry["conditions"]=json.loads(key[7])
+        dispatched=sum(r["event"]=="result" for r in trials)
+        entry.update(dispatched=dispatched,exact_per_dispatched=exact/dispatched if dispatched else None,
+                     final_line_correct=sum(r['grade'].get('final_line_correct',False) for r in successful),completed=n, other_outcomes=failures, exact_successes=exact,
                      exact_rate=exact / n if n else None, wilson95=wilson(exact, n),
                      mean_sequence_accuracy=sum(r["grade"]["sequence_accuracy"] for r in successful)/n if n else None,
                      format_failures=sum(not r["grade"]["format_ok"] for r in successful),
@@ -38,7 +44,8 @@ def report(directory):
     reserved = {r["request_key"]: float(r["reserve_usd"]) for r in rows if r["event"] == "reserved"}
     settled = {r["request_key"]: float(r["cost_upper_usd"]) for r in rows if r["event"] == "result"}
     pending = set(reserved) - set(settled)
-    data = dict(scoring_version=VERSION, live=manifest["live"], groups=output, case_count=len(cases),
+    version="score-v2" if any(c.get("version")=="games-v2" for c in cases.values()) else VERSION
+    data = dict(scoring_version=version, live=manifest["live"], groups=output, case_count=len(cases),
                 terminal_requests=sum(len(x) for x in groups.values()),
                 unsettled_requests=len(pending), reserved_unsettled_usd=sum(reserved[k] for k in pending),
                 settled_cost_upper_usd=sum(settled.values()),

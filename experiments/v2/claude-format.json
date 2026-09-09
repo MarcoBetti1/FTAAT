@@ -1,0 +1,75 @@
+{
+  "comparison": "same_text",
+  "order_seed": 20260910,
+  "suite": {
+    "version": "games-v2",
+    "blocks": [
+      {
+        "task": "two_hop",
+        "n": 128,
+        "seeds": [
+          4201,
+          4202,
+          4203,
+          4204,
+          4205,
+          4206,
+          4207,
+          4208,
+          4209,
+          4210,
+          4211,
+          4212,
+          4213,
+          4214,
+          4215,
+          4216
+        ],
+        "query_styles": [
+          "baseline",
+          "reminder"
+        ]
+      },
+      {
+        "task": "updates",
+        "n": 128,
+        "seeds": [
+          4201,
+          4202,
+          4203,
+          4204,
+          4205,
+          4206,
+          4207,
+          4208,
+          4209,
+          4210,
+          4211,
+          4212,
+          4213,
+          4214,
+          4215,
+          4216
+        ],
+        "query_styles": [
+          "baseline",
+          "reminder"
+        ]
+      }
+    ]
+  },
+  "models": [
+    {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001",
+      "input_usd_per_million": 1,
+      "output_usd_per_million": 5,
+      "context_window": 200000,
+      "max_output_tokens": 2048,
+      "pricing_checked": "2026-09-09",
+      "pricing_source": "https://platform.claude.com/docs/en/models/overview",
+      "temperature": 0,
+      "input_tokens_per_minute": 250000
+    }
+  ]
+}

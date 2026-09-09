@@ -114,6 +114,9 @@ def make_case(task, *, seed=0, n=32, k=2, depth=0.5, absent=False):
 
 
 def make_suite(config):
+    if config.get("version") == "games-v2":
+        from .tasks_v2 import make_suite as make_v2_suite
+        return make_v2_suite(config)
     cases = []
     for task in config["tasks"]:
         for n in config["record_counts"]:

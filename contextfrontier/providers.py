@@ -1,6 +1,6 @@
 """Official HTTP APIs. No hidden retries, local tokenizer substitutions or auto truncation."""
 import os
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from time import perf_counter
 import httpx
 
@@ -18,11 +18,13 @@ class Reply:
     latency_ms: float
     request_id: str | None
     raw: dict
+    rate_limits: dict = field(default_factory=dict)
 
 
 class APIProvider:
     def __init__(self, spec, client=None):
         self.spec = spec
+        self.rate_limits = {}
         self.provider = spec["provider"]
         if self.provider not in ("openai", "anthropic"):
             raise ValueError("Only official OpenAI and Anthropic APIs are supported")
@@ -44,6 +46,8 @@ class APIProvider:
         try:
             response = self.client.post(path, json=body)
             response.raise_for_status()
+            self.rate_limits={k:v for k,v in response.headers.items()
+                              if k.startswith(('x-ratelimit-','anthropic-ratelimit-'))}
             return response.json(), response.headers.get("x-request-id") or response.headers.get("request-id")
         except httpx.HTTPStatusError as e:
             raise ProviderError(f"{self.provider} HTTP {e.response.status_code} at {path}") from None
@@ -70,7 +74,7 @@ class APIProvider:
             raise ProviderError("Provider returned an invalid input token count")
         return dict(input_tokens=count, source=f"{self.provider}:{path}",
                     model=self.model, request_id=request_id,
-                    is_estimate=self.provider == "anthropic")
+                    is_estimate=self.provider == "anthropic", rate_limits=self.rate_limits.copy())
 
     def generate(self, case):
         body = self.input_body(case)
@@ -98,7 +102,7 @@ class APIProvider:
             text = "".join(c.get("text", "") for c in raw.get("content", []) if c.get("type") == "text")
             stop = raw.get("stop_reason", "unknown")
             status = "completed" if stop == "end_turn" else "incomplete" if stop == "max_tokens" else stop
-        return Reply(text, status, raw.get("model", self.model), usage, latency, request_id, raw)
+        return Reply(text, status, raw.get("model", self.model), usage, latency, request_id, raw, self.rate_limits.copy())
 
 
 def usage_counts(provider, usage):

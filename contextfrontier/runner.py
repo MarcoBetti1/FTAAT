@@ -9,6 +9,7 @@ from pathlib import Path
 import platform
 import random
 import subprocess
+import time
 
 from . import __version__
 from .providers import APIProvider, ProviderError, usage_counts
@@ -49,6 +50,10 @@ def validate(config):
         if model["provider"] not in ("openai", "anthropic"):
             raise ValueError("Unsupported provider")
         ids.append((model["provider"], model["model"]))
+        if "input_tokens_per_minute" in model:
+            limit=model["input_tokens_per_minute"]
+            if type(limit) is not int or limit<=0:
+                raise ValueError("Invalid input token pacing limit")
         for field in ("max_output_tokens", "context_window"):
             if type(model[field]) is not int or model[field] < 1:
                 raise ValueError(f"Invalid {field}")
@@ -111,6 +116,7 @@ def _run_locked(config, cases, directory, budget, live, provider_factory):
     jobs = [(case, spec) for case in cases for spec in config["models"]]
     random.Random(config.get("order_seed", 20260909)).shuffle(jobs)
     clients = {}
+    last_dispatch = {}
     try:
         for case, spec in jobs:
             key = digest([case.id, spec])
@@ -144,13 +150,27 @@ def _run_locked(config, cases, directory, budget, live, provider_factory):
             reserve = money(input_reserve, spec["input_usd_per_million"]) * Decimal("1.25") + money(cap, spec["output_usd_per_million"])
             if spent + reserve > budget:
                 return dict(status="budget_stop", spent_upper_usd=str(spent), budget_usd=str(budget))
+            # Optional conservative pacing applies before dispatch, not after an
+            # uncertain request. It is a quota precaution, not an API retry.
+            if spec.get("input_tokens_per_minute"):
+                rate=spec["input_tokens_per_minute"]
+                headers=getattr(provider,"rate_limits",{})
+                observed_limit=headers.get("x-ratelimit-limit-tokens") or headers.get("anthropic-ratelimit-input-tokens-limit")
+                if observed_limit and str(observed_limit).isdigit():rate=min(rate,int(observed_limit)*.8)
+                spacing=(inp+cap)*60/rate
+                wait=last_dispatch.get(provider_key,0)+spacing-time.monotonic()
+                if wait>0:time.sleep(wait)
+                last_dispatch[provider_key]=time.monotonic()
             append(path, dict(event="reserved", at=now(), reserve_usd=str(reserve), **meta))
             try:
                 reply = provider.generate(case)
                 actual_in, actual_out = usage_counts(spec["provider"], reply.usage)
                 # Conservative ceiling: all input at 1.25x ordinary rate covers short cache writes; cache reads cost less.
                 actual_cost = money(actual_in, spec["input_usd_per_million"]) * Decimal("1.25") + money(actual_out, spec["output_usd_per_million"])
-                scored = grade(reply.text, case.expected, symbols_per_answer=case.k) if reply.status == "completed" else None
+                scorer=grade
+                if case.version=="games-v2":
+                    from .scoring_v2 import grade as scorer
+                scored = scorer(reply.text, case.expected, symbols_per_answer=case.k) if reply.status == "completed" else None
                 append(path, dict(event="result", at=now(), reply=asdict(reply), grade=scored,
                                   actual_input_tokens=actual_in, actual_output_tokens=actual_out,
                                   count_delta=actual_in-inp, cost_upper_usd=str(actual_cost), **meta))
