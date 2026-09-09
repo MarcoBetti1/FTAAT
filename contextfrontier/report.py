@@ -57,16 +57,18 @@ def report(directory):
             f"Unsettled requests: {len(pending)}. Settled cost upper estimate: ${sum(settled.values()):.6f}.", "",
             "Identical text is shared across models; token counts are model-specific. K counts symbols, not tokenizer units.",
             "API models are tested; this is not a test of the ChatGPT or Claude web apps.", "",
-            "| Model | Game | N | K | Depth | Absent | Completed | Exact | 95% interval | Other outcomes | Input tokens |",
-            "|---|---|---:|---:|---:|---|---:|---:|---|---:|---|"]
+            "| Model | Game | Wording | N | K | Depth | Absent | Dispatched | Completed | Exact / dispatched | Correct final line | 95% completed interval | Other outcomes | Input tokens |",
+            "|---|---|---|---:|---:|---:|---|---:|---:|---:|---:|---|---:|---|"]
     for g in output:
         ci = g["wilson95"]
         interval = f"{ci[0]:.1%}–{ci[1]:.1%}" if ci else "—"
         rate = f"{g['exact_rate']:.1%}" if ci else "—"
-        text.append(f"| {g['model']} | {g['task']} | {g['n_records']} | {g['k_symbols']} | {g['depth']} | {g['absent']} | {g['completed']} | {rate} | {interval} | {g['other_outcomes']} | {g['input_token_range']} |")
+        wording=g['conditions'].get('query_style','original')
+        final_line=str(g['final_line_correct']) if version=='score-v2' else 'not measured'
+        text.append(f"| {g['model']} | {g['task']} | {wording} | {g['n_records']} | {g['k_symbols']} | {g['depth']} | {g['absent']} | {g['dispatched']} | {g['completed']} | {g['exact_successes']}/{g['dispatched']} | {final_line} | {interval} | {g['other_outcomes']} | {g['input_token_range']} |")
     text += ["", "Intervals describe exact trial success within each cell across seeds. Multiple answers in one recall trial are not independent samples.",
              "Refusals, incomplete output, transport failures, and skipped requests are shown separately and never silently scored as memory failures.",
              "A small exploratory sample cannot establish a reliable context frontier. Confirm interesting effects with fresh seeds and matched settings.",
-             "Adaptive stopping and many comparisons require caution; these are descriptive intervals, not a corrected significance test.", ""]
+             "This individual-run report is descriptive. Any prespecified campaign-level paired analysis is documented separately.", ""]
     (directory / "report.md").write_text("\n".join(text))
     return data

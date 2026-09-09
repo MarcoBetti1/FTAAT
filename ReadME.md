@@ -4,14 +4,25 @@ Reproducible games that probe where language models lose track of supplied infor
 Built from the **Fixed Token Abstract Attention Test (FTAAT)**, now being prepared for
 an original educational video series, **GPT Learning**.
 
-**Episode 01 complete:** 373 observed API responses across seven models, including
-four smoke tests. [Read the report](docs/episodes/01/report.md) and
-[download the evidence](https://github.com/MarcoBetti1/FTAAT/releases/tag/episode-01).
+**Episode 01, second edition:** 810 substantive responses across four configured
+models, plus 16 separate smoke checks. The new prespecified long-context comparison
+produced **GPT-4o Mini 2/32 versus GPT-5.6 Luna 32/32**, with GPT-4.1 Mini at 31/32,
+at roughly 111,000 input tokens. Claude Haiku receives a clearly labeled smaller
+retrieval panel and the full paired formatting experiment.
 
-Eight fresh long-context needle trials produced **GPT-4o Mini 0/8 versus GPT-5.6
-Luna 8/8** at roughly 111,000 input tokens. This is a small, selected-condition
-comparison, not a general intelligence ranking. The report separates strict
-output failures, secondary formatting flags, incomplete responses and refusals.
+[Read the new report](docs/episodes/01-v2/report.md),
+[inspect the frozen protocol](docs/episodes/01-v2/PROTOCOL.md), and
+[download the complete evidence](https://github.com/MarcoBetti1/FTAAT/releases/tag/episode-01-v2).
+The [original animated film source](video/v2/README.md) gives Pip a filing office,
+two stock voices, and an increasingly awkward performance review. Video publishing
+is handled by the channel owner.
+
+This is a synthetic task comparison, not a general intelligence ranking. Exact
+delivery and a predeclared final-line answer score are reported separately. All
+requests, model-specific usage, uncertainty, and paired reminder outcomes remain
+auditable. [Edition one](docs/episodes/01/report.md) and its
+[evidence](https://github.com/MarcoBetti1/FTAAT/releases/tag/episode-01) are retained
+unchanged and are not pooled into this new experiment.
 
 ## Run locally
 

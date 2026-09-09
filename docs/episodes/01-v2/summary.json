@@ -1,0 +1,2454 @@
+{
+  "protocol": "docs/episodes/01-v2/PROTOCOL.md",
+  "partial": false,
+  "models": {
+    "gpt-4o-mini-2024-07-18": "GPT-4o Mini",
+    "gpt-4.1-mini-2025-04-14": "GPT-4.1 Mini",
+    "gpt-5.6-luna": "GPT-5.6 Luna",
+    "claude-haiku-4-5-20251001": "Claude Haiku 4.5"
+  },
+  "runs": [
+    {
+      "name": "v2-openai-main",
+      "planned": 528,
+      "observed": 528,
+      "skipped": 0,
+      "error_events": 0,
+      "unobserved": 0,
+      "cost_upper_usd": "13.4268433000",
+      "manifest_identity": "f934b1eab34e629d4aa5ff55f323b15117af3df91da0fd6c0464c9cdf559a4ac",
+      "source_revision": "6eed3bc7f2753abdbde10d30d60ed262339634ef",
+      "models": [
+        {
+          "provider": "openai",
+          "model": "gpt-4o-mini-2024-07-18",
+          "input_usd_per_million": 0.15,
+          "output_usd_per_million": 0.6,
+          "context_window": 128000,
+          "max_output_tokens": 256,
+          "pricing_checked": "2026-09-09",
+          "pricing_source": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+          "temperature": 0,
+          "input_tokens_per_minute": 2000000
+        },
+        {
+          "provider": "openai",
+          "model": "gpt-4.1-mini-2025-04-14",
+          "input_usd_per_million": 0.4,
+          "output_usd_per_million": 1.6,
+          "context_window": 1047576,
+          "max_output_tokens": 256,
+          "pricing_checked": "2026-09-09",
+          "pricing_source": "https://developers.openai.com/api/docs/models/gpt-4.1-mini",
+          "temperature": 0,
+          "input_tokens_per_minute": 2000000
+        },
+        {
+          "provider": "openai",
+          "model": "gpt-5.6-luna",
+          "input_usd_per_million": 0.2,
+          "output_usd_per_million": 1.2,
+          "context_window": 1050000,
+          "max_output_tokens": 256,
+          "pricing_checked": "2026-09-09",
+          "pricing_source": "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
+          "reasoning_effort": "none",
+          "max_input_tokens": 922000,
+          "price_input_limit": 272000,
+          "input_tokens_per_minute": 2000000
+        }
+      ],
+      "ledger_sha256": "ca428a7cc37ef88ff98531f6431be55ba4c018a55e22e6fd7b028917b90e6b7f"
+    },
+    {
+      "name": "v2-claude-main",
+      "planned": 26,
+      "observed": 26,
+      "skipped": 0,
+      "error_events": 0,
+      "unobserved": 0,
+      "cost_upper_usd": "2.72248375",
+      "manifest_identity": "58b88181c0ca73be6d9b3c43e71799c168dba981c3ad53ef3847805b710e6c75",
+      "source_revision": "6eed3bc7f2753abdbde10d30d60ed262339634ef",
+      "models": [
+        {
+          "provider": "anthropic",
+          "model": "claude-haiku-4-5-20251001",
+          "input_usd_per_million": 1,
+          "output_usd_per_million": 5,
+          "context_window": 200000,
+          "max_output_tokens": 256,
+          "pricing_checked": "2026-09-09",
+          "pricing_source": "https://platform.claude.com/docs/en/models/overview",
+          "temperature": 0,
+          "input_tokens_per_minute": 250000
+        }
+      ],
+      "ledger_sha256": "03a5bceede7824c3c6faaed6d4935dc27ae6f4bde273360d4139e38ab96e3ac7"
+    },
+    {
+      "name": "v2-openai-format",
+      "planned": 192,
+      "observed": 192,
+      "skipped": 0,
+      "error_events": 0,
+      "unobserved": 0,
+      "cost_upper_usd": "0.1284950500",
+      "manifest_identity": "0a3ab409eac522bc1c6aa79c8d3820ec4a0bc9d5ef4787432ae17711f192118f",
+      "source_revision": "6eed3bc7f2753abdbde10d30d60ed262339634ef",
+      "models": [
+        {
+          "provider": "openai",
+          "model": "gpt-4o-mini-2024-07-18",
+          "input_usd_per_million": 0.15,
+          "output_usd_per_million": 0.6,
+          "context_window": 128000,
+          "max_output_tokens": 2048,
+          "pricing_checked": "2026-09-09",
+          "pricing_source": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+          "temperature": 0,
+          "input_tokens_per_minute": 2000000
+        },
+        {
+          "provider": "openai",
+          "model": "gpt-4.1-mini-2025-04-14",
+          "input_usd_per_million": 0.4,
+          "output_usd_per_million": 1.6,
+          "context_window": 1047576,
+          "max_output_tokens": 2048,
+          "pricing_checked": "2026-09-09",
+          "pricing_source": "https://developers.openai.com/api/docs/models/gpt-4.1-mini",
+          "temperature": 0,
+          "input_tokens_per_minute": 2000000
+        },
+        {
+          "provider": "openai",
+          "model": "gpt-5.6-luna",
+          "input_usd_per_million": 0.2,
+          "output_usd_per_million": 1.2,
+          "context_window": 1050000,
+          "max_output_tokens": 2048,
+          "pricing_checked": "2026-09-09",
+          "pricing_source": "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
+          "reasoning_effort": "none",
+          "max_input_tokens": 922000,
+          "price_input_limit": 272000,
+          "input_tokens_per_minute": 2000000
+        }
+      ],
+      "ledger_sha256": "68e7506704d4c5cba9e1c4fa19076132a5fbaa1e8274ae4605a4236e1ced9c80"
+    },
+    {
+      "name": "v2-claude-format",
+      "planned": 64,
+      "observed": 64,
+      "skipped": 0,
+      "error_events": 0,
+      "unobserved": 0,
+      "cost_upper_usd": "0.24602750",
+      "manifest_identity": "d2b2efc69cbaf85d36f24a9cab52a79da10d89efc43751c5a15d6647f61ec50b",
+      "source_revision": "6eed3bc7f2753abdbde10d30d60ed262339634ef",
+      "models": [
+        {
+          "provider": "anthropic",
+          "model": "claude-haiku-4-5-20251001",
+          "input_usd_per_million": 1,
+          "output_usd_per_million": 5,
+          "context_window": 200000,
+          "max_output_tokens": 2048,
+          "pricing_checked": "2026-09-09",
+          "pricing_source": "https://platform.claude.com/docs/en/models/overview",
+          "temperature": 0,
+          "input_tokens_per_minute": 250000
+        }
+      ],
+      "ledger_sha256": "269881a54fc6f042eef8be1bbe2f6a6b33b1b984526f2d9054f66ac7ae537299"
+    }
+  ],
+  "total": {
+    "n": 810,
+    "exact": 573,
+    "final_line_correct": 613,
+    "wilson95": [
+      0.675156274353287,
+      0.7377005497348893
+    ],
+    "status": {
+      "completed": 810
+    },
+    "input_tokens": [
+      1806,
+      153424
+    ]
+  },
+  "cells": [
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "task": "needle",
+      "n_records": 128,
+      "depth": 0.1,
+      "absent": false,
+      "query_style": "baseline",
+      "n": 4,
+      "exact": 4,
+      "final_line_correct": 4,
+      "wilson95": [
+        0.5101091635454027,
+        1
+      ],
+      "status": {
+        "completed": 4
+      },
+      "input_tokens": [
+        2470,
+        2525
+      ]
+    },
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "task": "needle",
+      "n_records": 128,
+      "depth": 0.5,
+      "absent": false,
+      "query_style": "baseline",
+      "n": 4,
+      "exact": 4,
+      "final_line_correct": 4,
+      "wilson95": [
+        0.5101091635454027,
+        1
+      ],
+      "status": {
+        "completed": 4
+      },
+      "input_tokens": [
+        2470,
+        2525
+      ]
+    },
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "task": "needle",
+      "n_records": 128,
+      "depth": 0.9,
+      "absent": false,
+      "query_style": "baseline",
+      "n": 4,
+      "exact": 4,
+      "final_line_correct": 4,
+      "wilson95": [
+        0.5101091635454027,
+        1
+      ],
+      "status": {
+        "completed": 4
+      },
+      "input_tokens": [
+        2470,
+        2525
+      ]
+    },
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "task": "needle",
+      "n_records": 8192,
+      "depth": 0.1,
+      "absent": false,
+      "query_style": "baseline",
+      "n": 4,
+      "exact": 1,
+      "final_line_correct": 1,
+      "wilson95": [
+        0.04558726080970055,
+        0.6993581574175981
+      ],
+      "status": {
+        "completed": 4
+      },
+      "input_tokens": [
+        153152,
+        153424
+      ]
+    },
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "task": "needle",
+      "n_records": 8192,
+      "depth": 0.5,
+      "absent": false,
+      "query_style": "baseline",
+      "n": 4,
+      "exact": 1,
+      "final_line_correct": 1,
+      "wilson95": [
+        0.04558726080970055,
+        0.6993581574175981
+      ],
+      "status": {
+        "completed": 4
+      },
+      "input_tokens": [
+        153152,
+        153424
+      ]
+    },
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "task": "needle",
+      "n_records": 8192,
+      "depth": 0.5,
+      "absent": true,
+      "query_style": "baseline",
+      "n": 2,
+      "exact": 0,
+      "final_line_correct": 1,
+      "wilson95": [
+        0,
+        0.6576197724933469
+      ],
+      "status": {
+        "completed": 2
+      },
+      "input_tokens": [
+        153186,
+        153200
+      ]
+    },
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "task": "needle",
+      "n_records": 8192,
+      "depth": 0.9,
+      "absent": false,
+      "query_style": "baseline",
+      "n": 4,
+      "exact": 3,
+      "final_line_correct": 3,
+      "wilson95": [
+        0.30064184258240184,
+        0.9544127391902995
+      ],
+      "status": {
+        "completed": 4
+      },
+      "input_tokens": [
+        153152,
+        153424
+      ]
+    },
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "task": "two_hop",
+      "n_records": 128,
+      "depth": 0.25,
+      "absent": false,
+      "query_style": "baseline",
+      "n": 16,
+      "exact": 0,
+      "final_line_correct": 16,
+      "wilson95": [
+        0,
+        0.1936076805344365
+      ],
+      "status": {
+        "completed": 16
+      },
+      "input_tokens": [
+        2459,
+        2538
+      ]
+    },
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "task": "two_hop",
+      "n_records": 128,
+      "depth": 0.25,
+      "absent": false,
+      "query_style": "reminder",
+      "n": 16,
+      "exact": 1,
+      "final_line_correct": 16,
+      "wilson95": [
+        0.01111934476464252,
+        0.28328737570298945
+      ],
+      "status": {
+        "completed": 16
+      },
+      "input_tokens": [
+        2484,
+        2563
+      ]
+    },
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "task": "updates",
+      "n_records": 128,
+      "depth": 0.25,
+      "absent": false,
+      "query_style": "baseline",
+      "n": 16,
+      "exact": 16,
+      "final_line_correct": 16,
+      "wilson95": [
+        0.8063923194655637,
+        1
+      ],
+      "status": {
+        "completed": 16
+      },
+      "input_tokens": [
+        2975,
+        3030
+      ]
+    },
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "task": "updates",
+      "n_records": 128,
+      "depth": 0.25,
+      "absent": false,
+      "query_style": "reminder",
+      "n": 16,
+      "exact": 16,
+      "final_line_correct": 16,
+      "wilson95": [
+        0.8063923194655637,
+        1
+      ],
+      "status": {
+        "completed": 16
+      },
+      "input_tokens": [
+        3000,
+        3055
+      ]
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "task": "needle",
+      "n_records": 128,
+      "depth": 0.1,
+      "absent": false,
+      "query_style": "baseline",
+      "n": 8,
+      "exact": 8,
+      "final_line_correct": 8,
+      "wilson95": [
+        0.6755924351161198,
+        1
+      ],
+      "status": {
+        "completed": 8
+      },
+      "input_tokens": [
+        1807,
+        1859
+      ]
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "task": "needle",
+      "n_records": 128,
+      "depth": 0.5,
+      "absent": false,
+      "query_style": "baseline",
+      "n": 8,
+      "exact": 8,
+      "final_line_correct": 8,
+      "wilson95": [
+        0.6755924351161198,
+        1
+      ],
+      "status": {
+        "completed": 8
+      },
+      "input_tokens": [
+        1807,
+        1859
+      ]
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "task": "needle",
+      "n_records": 128,
+      "depth": 0.9,
+      "absent": false,
+      "query_style": "baseline",
+      "n": 8,
+      "exact": 8,
+      "final_line_correct": 8,
+      "wilson95": [
+        0.6755924351161198,
+        1
+      ],
+      "status": {
+        "completed": 8
+      },
+      "input_tokens": [
+        1807,
+        1859
+      ]
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "task": "needle",
+      "n_records": 4096,
+      "depth": 0.1,
+      "absent": false,
+      "query_style": "baseline",
+      "n": 16,
+      "exact": 16,
+      "final_line_correct": 16,
+      "wilson95": [
+        0.8063923194655637,
+        1
+      ],
+      "status": {
+        "completed": 16
+      },
+      "input_tokens": [
+        55659,
+        55916
+      ]
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "task": "needle",
+      "n_records": 4096,
+      "depth": 0.5,
+      "absent": false,
+      "query_style": "baseline",
+      "n": 16,
+      "exact": 16,
+      "final_line_correct": 16,
+      "wilson95": [
+        0.8063923194655637,
+        1
+      ],
+      "status": {
+        "completed": 16
+      },
+      "input_tokens": [
+        55659,
+        55916
+      ]
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "task": "needle",
+      "n_records": 4096,
+      "depth": 0.9,
+      "absent": false,
+      "query_style": "baseline",
+      "n": 16,
+      "exact": 16,
+      "final_line_correct": 16,
+      "wilson95": [
+        0.8063923194655637,
+        1
+      ],
+      "status": {
+        "completed": 16
+      },
+      "input_tokens": [
+        55659,
+        55916
+      ]
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "task": "needle",
+      "n_records": 8192,
+      "depth": 0.1,
+      "absent": false,
+      "query_style": "baseline",
+      "n": 32,
+      "exact": 32,
+      "final_line_correct": 32,
+      "wilson95": [
+        0.8928208017449293,
+        1
+      ],
+      "status": {
+        "completed": 32
+      },
+      "input_tokens": [
+        111280,
+        111649
+      ]
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "task": "needle",
+      "n_records": 8192,
+      "depth": 0.5,
+      "absent": false,
+      "query_style": "baseline",
+      "n": 32,
+      "exact": 31,
+      "final_line_correct": 31,
+      "wilson95": [
+        0.8425573617998744,
+        0.9944621398359969
+      ],
+      "status": {
+        "completed": 32
+      },
+      "input_tokens": [
+        111280,
+        111649
+      ]
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "task": "needle",
+      "n_records": 8192,
+      "depth": 0.5,
+      "absent": true,
+      "query_style": "baseline",
+      "n": 8,
+      "exact": 8,
+      "final_line_correct": 8,
+      "wilson95": [
+        0.6755924351161198,
+        1
+      ],
+      "status": {
+        "completed": 8
+      },
+      "input_tokens": [
+        111412,
+        111635
+      ]
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "task": "needle",
+      "n_records": 8192,
+      "depth": 0.9,
+      "absent": false,
+      "query_style": "baseline",
+      "n": 32,
+      "exact": 31,
+      "final_line_correct": 31,
+      "wilson95": [
+        0.8425573617998744,
+        0.9944621398359969
+      ],
+      "status": {
+        "completed": 32
+      },
+      "input_tokens": [
+        111280,
+        111649
+      ]
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "task": "two_hop",
+      "n_records": 128,
+      "depth": 0.25,
+      "absent": false,
+      "query_style": "baseline",
+      "n": 16,
+      "exact": 13,
+      "final_line_correct": 16,
+      "wilson95": [
+        0.5699111903802586,
+        0.9340840092857187
+      ],
+      "status": {
+        "completed": 16
+      },
+      "input_tokens": [
+        1809,
+        1863
+      ]
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "task": "two_hop",
+      "n_records": 128,
+      "depth": 0.25,
+      "absent": false,
+      "query_style": "reminder",
+      "n": 16,
+      "exact": 11,
+      "final_line_correct": 16,
+      "wilson95": [
+        0.44404355834740666,
+        0.8583535614521796
+      ],
+      "status": {
+        "completed": 16
+      },
+      "input_tokens": [
+        1832,
+        1886
+      ]
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "task": "updates",
+      "n_records": 128,
+      "depth": 0.25,
+      "absent": false,
+      "query_style": "baseline",
+      "n": 16,
+      "exact": 14,
+      "final_line_correct": 14,
+      "wilson95": [
+        0.639771727342413,
+        0.9650225122567595
+      ],
+      "status": {
+        "completed": 16
+      },
+      "input_tokens": [
+        2337,
+        2382
+      ]
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "task": "updates",
+      "n_records": 128,
+      "depth": 0.25,
+      "absent": false,
+      "query_style": "reminder",
+      "n": 16,
+      "exact": 16,
+      "final_line_correct": 16,
+      "wilson95": [
+        0.8063923194655637,
+        1
+      ],
+      "status": {
+        "completed": 16
+      },
+      "input_tokens": [
+        2360,
+        2405
+      ]
+    },
+    {
+      "model": "gpt-4o-mini-2024-07-18",
+      "task": "needle",
+      "n_records": 128,
+      "depth": 0.1,
+      "absent": false,
+      "query_style": "baseline",
+      "n": 8,
+      "exact": 8,
+      "final_line_correct": 8,
+      "wilson95": [
+        0.6755924351161198,
+        1
+      ],
+      "status": {
+        "completed": 8
+      },
+      "input_tokens": [
+        1807,
+        1859
+      ]
+    },
+    {
+      "model": "gpt-4o-mini-2024-07-18",
+      "task": "needle",
+      "n_records": 128,
+      "depth": 0.5,
+      "absent": false,
+      "query_style": "baseline",
+      "n": 8,
+      "exact": 8,
+      "final_line_correct": 8,
+      "wilson95": [
+        0.6755924351161198,
+        1
+      ],
+      "status": {
+        "completed": 8
+      },
+      "input_tokens": [
+        1807,
+        1859
+      ]
+    },
+    {
+      "model": "gpt-4o-mini-2024-07-18",
+      "task": "needle",
+      "n_records": 128,
+      "depth": 0.9,
+      "absent": false,
+      "query_style": "baseline",
+      "n": 8,
+      "exact": 8,
+      "final_line_correct": 8,
+      "wilson95": [
+        0.6755924351161198,
+        1
+      ],
+      "status": {
+        "completed": 8
+      },
+      "input_tokens": [
+        1807,
+        1859
+      ]
+    },
+    {
+      "model": "gpt-4o-mini-2024-07-18",
+      "task": "needle",
+      "n_records": 4096,
+      "depth": 0.1,
+      "absent": false,
+      "query_style": "baseline",
+      "n": 16,
+      "exact": 10,
+      "final_line_correct": 10,
+      "wilson95": [
+        0.38641040545502714,
+        0.8151876744113636
+      ],
+      "status": {
+        "completed": 16
+      },
+      "input_tokens": [
+        55659,
+        55916
+      ]
+    },
+    {
+      "model": "gpt-4o-mini-2024-07-18",
+      "task": "needle",
+      "n_records": 4096,
+      "depth": 0.5,
+      "absent": false,
+      "query_style": "baseline",
+      "n": 16,
+      "exact": 2,
+      "final_line_correct": 2,
+      "wilson95": [
+        0.03497748774324047,
+        0.36022827265758695
+      ],
+      "status": {
+        "completed": 16
+      },
+      "input_tokens": [
+        55659,
+        55916
+      ]
+    },
+    {
+      "model": "gpt-4o-mini-2024-07-18",
+      "task": "needle",
+      "n_records": 4096,
+      "depth": 0.9,
+      "absent": false,
+      "query_style": "baseline",
+      "n": 16,
+      "exact": 2,
+      "final_line_correct": 2,
+      "wilson95": [
+        0.03497748774324047,
+        0.36022827265758695
+      ],
+      "status": {
+        "completed": 16
+      },
+      "input_tokens": [
+        55659,
+        55916
+      ]
+    },
+    {
+      "model": "gpt-4o-mini-2024-07-18",
+      "task": "needle",
+      "n_records": 8192,
+      "depth": 0.1,
+      "absent": false,
+      "query_style": "baseline",
+      "n": 32,
+      "exact": 6,
+      "final_line_correct": 6,
+      "wilson95": [
+        0.08889544689565954,
+        0.3530915520137596
+      ],
+      "status": {
+        "completed": 32
+      },
+      "input_tokens": [
+        111280,
+        111649
+      ]
+    },
+    {
+      "model": "gpt-4o-mini-2024-07-18",
+      "task": "needle",
+      "n_records": 8192,
+      "depth": 0.5,
+      "absent": false,
+      "query_style": "baseline",
+      "n": 32,
+      "exact": 7,
+      "final_line_correct": 7,
+      "wilson95": [
+        0.11023836252604186,
+        0.3875499364924353
+      ],
+      "status": {
+        "completed": 32
+      },
+      "input_tokens": [
+        111280,
+        111649
+      ]
+    },
+    {
+      "model": "gpt-4o-mini-2024-07-18",
+      "task": "needle",
+      "n_records": 8192,
+      "depth": 0.5,
+      "absent": true,
+      "query_style": "baseline",
+      "n": 8,
+      "exact": 8,
+      "final_line_correct": 8,
+      "wilson95": [
+        0.6755924351161198,
+        1
+      ],
+      "status": {
+        "completed": 8
+      },
+      "input_tokens": [
+        111412,
+        111635
+      ]
+    },
+    {
+      "model": "gpt-4o-mini-2024-07-18",
+      "task": "needle",
+      "n_records": 8192,
+      "depth": 0.9,
+      "absent": false,
+      "query_style": "baseline",
+      "n": 32,
+      "exact": 2,
+      "final_line_correct": 2,
+      "wilson95": [
+        0.017310567031640967,
+        0.2014712314415458
+      ],
+      "status": {
+        "completed": 32
+      },
+      "input_tokens": [
+        111280,
+        111649
+      ]
+    },
+    {
+      "model": "gpt-4o-mini-2024-07-18",
+      "task": "two_hop",
+      "n_records": 128,
+      "depth": 0.25,
+      "absent": false,
+      "query_style": "baseline",
+      "n": 16,
+      "exact": 0,
+      "final_line_correct": 0,
+      "wilson95": [
+        0,
+        0.1936076805344365
+      ],
+      "status": {
+        "completed": 16
+      },
+      "input_tokens": [
+        1809,
+        1863
+      ]
+    },
+    {
+      "model": "gpt-4o-mini-2024-07-18",
+      "task": "two_hop",
+      "n_records": 128,
+      "depth": 0.25,
+      "absent": false,
+      "query_style": "reminder",
+      "n": 16,
+      "exact": 0,
+      "final_line_correct": 0,
+      "wilson95": [
+        0,
+        0.1936076805344365
+      ],
+      "status": {
+        "completed": 16
+      },
+      "input_tokens": [
+        1832,
+        1886
+      ]
+    },
+    {
+      "model": "gpt-4o-mini-2024-07-18",
+      "task": "updates",
+      "n_records": 128,
+      "depth": 0.25,
+      "absent": false,
+      "query_style": "baseline",
+      "n": 16,
+      "exact": 4,
+      "final_line_correct": 4,
+      "wilson95": [
+        0.10182067491213048,
+        0.49498316535508774
+      ],
+      "status": {
+        "completed": 16
+      },
+      "input_tokens": [
+        2337,
+        2382
+      ]
+    },
+    {
+      "model": "gpt-4o-mini-2024-07-18",
+      "task": "updates",
+      "n_records": 128,
+      "depth": 0.25,
+      "absent": false,
+      "query_style": "reminder",
+      "n": 16,
+      "exact": 7,
+      "final_line_correct": 7,
+      "wilson95": [
+        0.23098652405492354,
+        0.6682144360118811
+      ],
+      "status": {
+        "completed": 16
+      },
+      "input_tokens": [
+        2360,
+        2405
+      ]
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "task": "needle",
+      "n_records": 128,
+      "depth": 0.1,
+      "absent": false,
+      "query_style": "baseline",
+      "n": 8,
+      "exact": 8,
+      "final_line_correct": 8,
+      "wilson95": [
+        0.6755924351161198,
+        1
+      ],
+      "status": {
+        "completed": 8
+      },
+      "input_tokens": [
+        1806,
+        1858
+      ]
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "task": "needle",
+      "n_records": 128,
+      "depth": 0.5,
+      "absent": false,
+      "query_style": "baseline",
+      "n": 8,
+      "exact": 8,
+      "final_line_correct": 8,
+      "wilson95": [
+        0.6755924351161198,
+        1
+      ],
+      "status": {
+        "completed": 8
+      },
+      "input_tokens": [
+        1806,
+        1858
+      ]
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "task": "needle",
+      "n_records": 128,
+      "depth": 0.9,
+      "absent": false,
+      "query_style": "baseline",
+      "n": 8,
+      "exact": 8,
+      "final_line_correct": 8,
+      "wilson95": [
+        0.6755924351161198,
+        1
+      ],
+      "status": {
+        "completed": 8
+      },
+      "input_tokens": [
+        1806,
+        1858
+      ]
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "task": "needle",
+      "n_records": 4096,
+      "depth": 0.1,
+      "absent": false,
+      "query_style": "baseline",
+      "n": 16,
+      "exact": 16,
+      "final_line_correct": 16,
+      "wilson95": [
+        0.8063923194655637,
+        1
+      ],
+      "status": {
+        "completed": 16
+      },
+      "input_tokens": [
+        55658,
+        55915
+      ]
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "task": "needle",
+      "n_records": 4096,
+      "depth": 0.5,
+      "absent": false,
+      "query_style": "baseline",
+      "n": 16,
+      "exact": 16,
+      "final_line_correct": 16,
+      "wilson95": [
+        0.8063923194655637,
+        1
+      ],
+      "status": {
+        "completed": 16
+      },
+      "input_tokens": [
+        55658,
+        55915
+      ]
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "task": "needle",
+      "n_records": 4096,
+      "depth": 0.9,
+      "absent": false,
+      "query_style": "baseline",
+      "n": 16,
+      "exact": 16,
+      "final_line_correct": 16,
+      "wilson95": [
+        0.8063923194655637,
+        1
+      ],
+      "status": {
+        "completed": 16
+      },
+      "input_tokens": [
+        55658,
+        55915
+      ]
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "task": "needle",
+      "n_records": 8192,
+      "depth": 0.1,
+      "absent": false,
+      "query_style": "baseline",
+      "n": 32,
+      "exact": 32,
+      "final_line_correct": 32,
+      "wilson95": [
+        0.8928208017449293,
+        1
+      ],
+      "status": {
+        "completed": 32
+      },
+      "input_tokens": [
+        111279,
+        111648
+      ]
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "task": "needle",
+      "n_records": 8192,
+      "depth": 0.5,
+      "absent": false,
+      "query_style": "baseline",
+      "n": 32,
+      "exact": 32,
+      "final_line_correct": 32,
+      "wilson95": [
+        0.8928208017449293,
+        1
+      ],
+      "status": {
+        "completed": 32
+      },
+      "input_tokens": [
+        111279,
+        111648
+      ]
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "task": "needle",
+      "n_records": 8192,
+      "depth": 0.5,
+      "absent": true,
+      "query_style": "baseline",
+      "n": 8,
+      "exact": 8,
+      "final_line_correct": 8,
+      "wilson95": [
+        0.6755924351161198,
+        1
+      ],
+      "status": {
+        "completed": 8
+      },
+      "input_tokens": [
+        111411,
+        111634
+      ]
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "task": "needle",
+      "n_records": 8192,
+      "depth": 0.9,
+      "absent": false,
+      "query_style": "baseline",
+      "n": 32,
+      "exact": 32,
+      "final_line_correct": 32,
+      "wilson95": [
+        0.8928208017449293,
+        1
+      ],
+      "status": {
+        "completed": 32
+      },
+      "input_tokens": [
+        111279,
+        111648
+      ]
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "task": "two_hop",
+      "n_records": 128,
+      "depth": 0.25,
+      "absent": false,
+      "query_style": "baseline",
+      "n": 16,
+      "exact": 14,
+      "final_line_correct": 14,
+      "wilson95": [
+        0.639771727342413,
+        0.9650225122567595
+      ],
+      "status": {
+        "completed": 16
+      },
+      "input_tokens": [
+        1808,
+        1862
+      ]
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "task": "two_hop",
+      "n_records": 128,
+      "depth": 0.25,
+      "absent": false,
+      "query_style": "reminder",
+      "n": 16,
+      "exact": 12,
+      "final_line_correct": 12,
+      "wilson95": [
+        0.5050168346449122,
+        0.8981793250878696
+      ],
+      "status": {
+        "completed": 16
+      },
+      "input_tokens": [
+        1831,
+        1885
+      ]
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "task": "updates",
+      "n_records": 128,
+      "depth": 0.25,
+      "absent": false,
+      "query_style": "baseline",
+      "n": 16,
+      "exact": 8,
+      "final_line_correct": 8,
+      "wilson95": [
+        0.27999563610326017,
+        0.7200043638967398
+      ],
+      "status": {
+        "completed": 16
+      },
+      "input_tokens": [
+        2336,
+        2381
+      ]
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "task": "updates",
+      "n_records": 128,
+      "depth": 0.25,
+      "absent": false,
+      "query_style": "reminder",
+      "n": 16,
+      "exact": 13,
+      "final_line_correct": 13,
+      "wilson95": [
+        0.5699111903802586,
+        0.9340840092857187
+      ],
+      "status": {
+        "completed": 16
+      },
+      "input_tokens": [
+        2359,
+        2404
+      ]
+    }
+  ],
+  "primary": {
+    "gpt-4o-mini-2024-07-18": {
+      "n": 32,
+      "exact": 2,
+      "final_line_correct": 2,
+      "wilson95": [
+        0.017310567031640967,
+        0.2014712314415458
+      ],
+      "status": {
+        "completed": 32
+      },
+      "input_tokens": [
+        111280,
+        111649
+      ],
+      "seeds": [
+        4101,
+        4102,
+        4103,
+        4104,
+        4105,
+        4106,
+        4107,
+        4108,
+        4109,
+        4110,
+        4111,
+        4112,
+        4113,
+        4114,
+        4115,
+        4116,
+        4117,
+        4118,
+        4119,
+        4120,
+        4121,
+        4122,
+        4123,
+        4124,
+        4125,
+        4126,
+        4127,
+        4128,
+        4129,
+        4130,
+        4131,
+        4132
+      ],
+      "exact_by_seed": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        false
+      ]
+    },
+    "gpt-4.1-mini-2025-04-14": {
+      "n": 32,
+      "exact": 31,
+      "final_line_correct": 31,
+      "wilson95": [
+        0.8425573617998744,
+        0.9944621398359969
+      ],
+      "status": {
+        "completed": 32
+      },
+      "input_tokens": [
+        111280,
+        111649
+      ],
+      "seeds": [
+        4101,
+        4102,
+        4103,
+        4104,
+        4105,
+        4106,
+        4107,
+        4108,
+        4109,
+        4110,
+        4111,
+        4112,
+        4113,
+        4114,
+        4115,
+        4116,
+        4117,
+        4118,
+        4119,
+        4120,
+        4121,
+        4122,
+        4123,
+        4124,
+        4125,
+        4126,
+        4127,
+        4128,
+        4129,
+        4130,
+        4131,
+        4132
+      ],
+      "exact_by_seed": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    "gpt-5.6-luna": {
+      "n": 32,
+      "exact": 32,
+      "final_line_correct": 32,
+      "wilson95": [
+        0.8928208017449293,
+        1
+      ],
+      "status": {
+        "completed": 32
+      },
+      "input_tokens": [
+        111279,
+        111648
+      ],
+      "seeds": [
+        4101,
+        4102,
+        4103,
+        4104,
+        4105,
+        4106,
+        4107,
+        4108,
+        4109,
+        4110,
+        4111,
+        4112,
+        4113,
+        4114,
+        4115,
+        4116,
+        4117,
+        4118,
+        4119,
+        4120,
+        4121,
+        4122,
+        4123,
+        4124,
+        4125,
+        4126,
+        4127,
+        4128,
+        4129,
+        4130,
+        4131,
+        4132
+      ],
+      "exact_by_seed": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    }
+  },
+  "contrast": {
+    "models": [
+      "gpt-4o-mini-2024-07-18",
+      "gpt-5.6-luna"
+    ],
+    "complete_pairs": 32,
+    "expected_pairs": 32,
+    "old_only": 0,
+    "new_only": 30,
+    "both_correct": 2,
+    "both_wrong": 0,
+    "exact_two_sided_mcnemar_p": 1.862645149230957e-09
+  },
+  "format_pairs": [
+    {
+      "model": "gpt-4o-mini-2024-07-18",
+      "task": "two_hop",
+      "pairs": 16,
+      "expected_pairs": 16,
+      "measures": {
+        "exact": {
+          "baseline": 0,
+          "reminder": 0,
+          "improved": 0,
+          "worsened": 0
+        },
+        "final_line_correct": {
+          "baseline": 0,
+          "reminder": 0,
+          "improved": 0,
+          "worsened": 0
+        }
+      }
+    },
+    {
+      "model": "gpt-4o-mini-2024-07-18",
+      "task": "updates",
+      "pairs": 16,
+      "expected_pairs": 16,
+      "measures": {
+        "exact": {
+          "baseline": 4,
+          "reminder": 7,
+          "improved": 3,
+          "worsened": 0
+        },
+        "final_line_correct": {
+          "baseline": 4,
+          "reminder": 7,
+          "improved": 3,
+          "worsened": 0
+        }
+      }
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "task": "two_hop",
+      "pairs": 16,
+      "expected_pairs": 16,
+      "measures": {
+        "exact": {
+          "baseline": 13,
+          "reminder": 11,
+          "improved": 0,
+          "worsened": 2
+        },
+        "final_line_correct": {
+          "baseline": 16,
+          "reminder": 16,
+          "improved": 0,
+          "worsened": 0
+        }
+      }
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "task": "updates",
+      "pairs": 16,
+      "expected_pairs": 16,
+      "measures": {
+        "exact": {
+          "baseline": 14,
+          "reminder": 16,
+          "improved": 2,
+          "worsened": 0
+        },
+        "final_line_correct": {
+          "baseline": 14,
+          "reminder": 16,
+          "improved": 2,
+          "worsened": 0
+        }
+      }
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "task": "two_hop",
+      "pairs": 16,
+      "expected_pairs": 16,
+      "measures": {
+        "exact": {
+          "baseline": 14,
+          "reminder": 12,
+          "improved": 0,
+          "worsened": 2
+        },
+        "final_line_correct": {
+          "baseline": 14,
+          "reminder": 12,
+          "improved": 0,
+          "worsened": 2
+        }
+      }
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "task": "updates",
+      "pairs": 16,
+      "expected_pairs": 16,
+      "measures": {
+        "exact": {
+          "baseline": 8,
+          "reminder": 13,
+          "improved": 5,
+          "worsened": 0
+        },
+        "final_line_correct": {
+          "baseline": 8,
+          "reminder": 13,
+          "improved": 5,
+          "worsened": 0
+        }
+      }
+    },
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "task": "two_hop",
+      "pairs": 16,
+      "expected_pairs": 16,
+      "measures": {
+        "exact": {
+          "baseline": 0,
+          "reminder": 1,
+          "improved": 1,
+          "worsened": 0
+        },
+        "final_line_correct": {
+          "baseline": 16,
+          "reminder": 16,
+          "improved": 0,
+          "worsened": 0
+        }
+      }
+    },
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "task": "updates",
+      "pairs": 16,
+      "expected_pairs": 16,
+      "measures": {
+        "exact": {
+          "baseline": 16,
+          "reminder": 16,
+          "improved": 0,
+          "worsened": 0
+        },
+        "final_line_correct": {
+          "baseline": 16,
+          "reminder": 16,
+          "improved": 0,
+          "worsened": 0
+        }
+      }
+    }
+  ],
+  "shared_claude": [
+    {
+      "model": "gpt-4o-mini-2024-07-18",
+      "n_records": 128,
+      "depth": 0.1,
+      "seed_range": [
+        4101,
+        4104
+      ],
+      "n": 4,
+      "exact": 4,
+      "final_line_correct": 4,
+      "wilson95": [
+        0.5101091635454027,
+        1
+      ],
+      "status": {
+        "completed": 4
+      },
+      "input_tokens": [
+        1807,
+        1859
+      ]
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "n_records": 128,
+      "depth": 0.1,
+      "seed_range": [
+        4101,
+        4104
+      ],
+      "n": 4,
+      "exact": 4,
+      "final_line_correct": 4,
+      "wilson95": [
+        0.5101091635454027,
+        1
+      ],
+      "status": {
+        "completed": 4
+      },
+      "input_tokens": [
+        1807,
+        1859
+      ]
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "n_records": 128,
+      "depth": 0.1,
+      "seed_range": [
+        4101,
+        4104
+      ],
+      "n": 4,
+      "exact": 4,
+      "final_line_correct": 4,
+      "wilson95": [
+        0.5101091635454027,
+        1
+      ],
+      "status": {
+        "completed": 4
+      },
+      "input_tokens": [
+        1806,
+        1858
+      ]
+    },
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "n_records": 128,
+      "depth": 0.1,
+      "seed_range": [
+        4101,
+        4104
+      ],
+      "n": 4,
+      "exact": 4,
+      "final_line_correct": 4,
+      "wilson95": [
+        0.5101091635454027,
+        1
+      ],
+      "status": {
+        "completed": 4
+      },
+      "input_tokens": [
+        2470,
+        2525
+      ]
+    },
+    {
+      "model": "gpt-4o-mini-2024-07-18",
+      "n_records": 128,
+      "depth": 0.5,
+      "seed_range": [
+        4101,
+        4104
+      ],
+      "n": 4,
+      "exact": 4,
+      "final_line_correct": 4,
+      "wilson95": [
+        0.5101091635454027,
+        1
+      ],
+      "status": {
+        "completed": 4
+      },
+      "input_tokens": [
+        1807,
+        1859
+      ]
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "n_records": 128,
+      "depth": 0.5,
+      "seed_range": [
+        4101,
+        4104
+      ],
+      "n": 4,
+      "exact": 4,
+      "final_line_correct": 4,
+      "wilson95": [
+        0.5101091635454027,
+        1
+      ],
+      "status": {
+        "completed": 4
+      },
+      "input_tokens": [
+        1807,
+        1859
+      ]
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "n_records": 128,
+      "depth": 0.5,
+      "seed_range": [
+        4101,
+        4104
+      ],
+      "n": 4,
+      "exact": 4,
+      "final_line_correct": 4,
+      "wilson95": [
+        0.5101091635454027,
+        1
+      ],
+      "status": {
+        "completed": 4
+      },
+      "input_tokens": [
+        1806,
+        1858
+      ]
+    },
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "n_records": 128,
+      "depth": 0.5,
+      "seed_range": [
+        4101,
+        4104
+      ],
+      "n": 4,
+      "exact": 4,
+      "final_line_correct": 4,
+      "wilson95": [
+        0.5101091635454027,
+        1
+      ],
+      "status": {
+        "completed": 4
+      },
+      "input_tokens": [
+        2470,
+        2525
+      ]
+    },
+    {
+      "model": "gpt-4o-mini-2024-07-18",
+      "n_records": 128,
+      "depth": 0.9,
+      "seed_range": [
+        4101,
+        4104
+      ],
+      "n": 4,
+      "exact": 4,
+      "final_line_correct": 4,
+      "wilson95": [
+        0.5101091635454027,
+        1
+      ],
+      "status": {
+        "completed": 4
+      },
+      "input_tokens": [
+        1807,
+        1859
+      ]
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "n_records": 128,
+      "depth": 0.9,
+      "seed_range": [
+        4101,
+        4104
+      ],
+      "n": 4,
+      "exact": 4,
+      "final_line_correct": 4,
+      "wilson95": [
+        0.5101091635454027,
+        1
+      ],
+      "status": {
+        "completed": 4
+      },
+      "input_tokens": [
+        1807,
+        1859
+      ]
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "n_records": 128,
+      "depth": 0.9,
+      "seed_range": [
+        4101,
+        4104
+      ],
+      "n": 4,
+      "exact": 4,
+      "final_line_correct": 4,
+      "wilson95": [
+        0.5101091635454027,
+        1
+      ],
+      "status": {
+        "completed": 4
+      },
+      "input_tokens": [
+        1806,
+        1858
+      ]
+    },
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "n_records": 128,
+      "depth": 0.9,
+      "seed_range": [
+        4101,
+        4104
+      ],
+      "n": 4,
+      "exact": 4,
+      "final_line_correct": 4,
+      "wilson95": [
+        0.5101091635454027,
+        1
+      ],
+      "status": {
+        "completed": 4
+      },
+      "input_tokens": [
+        2470,
+        2525
+      ]
+    },
+    {
+      "model": "gpt-4o-mini-2024-07-18",
+      "n_records": 8192,
+      "depth": 0.1,
+      "seed_range": [
+        4101,
+        4104
+      ],
+      "n": 4,
+      "exact": 1,
+      "final_line_correct": 1,
+      "wilson95": [
+        0.04558726080970055,
+        0.6993581574175981
+      ],
+      "status": {
+        "completed": 4
+      },
+      "input_tokens": [
+        111492,
+        111597
+      ]
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "n_records": 8192,
+      "depth": 0.1,
+      "seed_range": [
+        4101,
+        4104
+      ],
+      "n": 4,
+      "exact": 4,
+      "final_line_correct": 4,
+      "wilson95": [
+        0.5101091635454027,
+        1
+      ],
+      "status": {
+        "completed": 4
+      },
+      "input_tokens": [
+        111492,
+        111597
+      ]
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "n_records": 8192,
+      "depth": 0.1,
+      "seed_range": [
+        4101,
+        4104
+      ],
+      "n": 4,
+      "exact": 4,
+      "final_line_correct": 4,
+      "wilson95": [
+        0.5101091635454027,
+        1
+      ],
+      "status": {
+        "completed": 4
+      },
+      "input_tokens": [
+        111491,
+        111596
+      ]
+    },
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "n_records": 8192,
+      "depth": 0.1,
+      "seed_range": [
+        4101,
+        4104
+      ],
+      "n": 4,
+      "exact": 1,
+      "final_line_correct": 1,
+      "wilson95": [
+        0.04558726080970055,
+        0.6993581574175981
+      ],
+      "status": {
+        "completed": 4
+      },
+      "input_tokens": [
+        153152,
+        153424
+      ]
+    },
+    {
+      "model": "gpt-4o-mini-2024-07-18",
+      "n_records": 8192,
+      "depth": 0.5,
+      "seed_range": [
+        4101,
+        4104
+      ],
+      "n": 4,
+      "exact": 0,
+      "final_line_correct": 0,
+      "wilson95": [
+        0,
+        0.4898908364545973
+      ],
+      "status": {
+        "completed": 4
+      },
+      "input_tokens": [
+        111492,
+        111597
+      ]
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "n_records": 8192,
+      "depth": 0.5,
+      "seed_range": [
+        4101,
+        4104
+      ],
+      "n": 4,
+      "exact": 4,
+      "final_line_correct": 4,
+      "wilson95": [
+        0.5101091635454027,
+        1
+      ],
+      "status": {
+        "completed": 4
+      },
+      "input_tokens": [
+        111492,
+        111597
+      ]
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "n_records": 8192,
+      "depth": 0.5,
+      "seed_range": [
+        4101,
+        4104
+      ],
+      "n": 4,
+      "exact": 4,
+      "final_line_correct": 4,
+      "wilson95": [
+        0.5101091635454027,
+        1
+      ],
+      "status": {
+        "completed": 4
+      },
+      "input_tokens": [
+        111491,
+        111596
+      ]
+    },
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "n_records": 8192,
+      "depth": 0.5,
+      "seed_range": [
+        4101,
+        4104
+      ],
+      "n": 4,
+      "exact": 1,
+      "final_line_correct": 1,
+      "wilson95": [
+        0.04558726080970055,
+        0.6993581574175981
+      ],
+      "status": {
+        "completed": 4
+      },
+      "input_tokens": [
+        153152,
+        153424
+      ]
+    },
+    {
+      "model": "gpt-4o-mini-2024-07-18",
+      "n_records": 8192,
+      "depth": 0.9,
+      "seed_range": [
+        4101,
+        4104
+      ],
+      "n": 4,
+      "exact": 0,
+      "final_line_correct": 0,
+      "wilson95": [
+        0,
+        0.4898908364545973
+      ],
+      "status": {
+        "completed": 4
+      },
+      "input_tokens": [
+        111492,
+        111597
+      ]
+    },
+    {
+      "model": "gpt-4.1-mini-2025-04-14",
+      "n_records": 8192,
+      "depth": 0.9,
+      "seed_range": [
+        4101,
+        4104
+      ],
+      "n": 4,
+      "exact": 4,
+      "final_line_correct": 4,
+      "wilson95": [
+        0.5101091635454027,
+        1
+      ],
+      "status": {
+        "completed": 4
+      },
+      "input_tokens": [
+        111492,
+        111597
+      ]
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "n_records": 8192,
+      "depth": 0.9,
+      "seed_range": [
+        4101,
+        4104
+      ],
+      "n": 4,
+      "exact": 4,
+      "final_line_correct": 4,
+      "wilson95": [
+        0.5101091635454027,
+        1
+      ],
+      "status": {
+        "completed": 4
+      },
+      "input_tokens": [
+        111491,
+        111596
+      ]
+    },
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "n_records": 8192,
+      "depth": 0.9,
+      "seed_range": [
+        4101,
+        4104
+      ],
+      "n": 4,
+      "exact": 3,
+      "final_line_correct": 3,
+      "wilson95": [
+        0.30064184258240184,
+        0.9544127391902995
+      ],
+      "status": {
+        "completed": 4
+      },
+      "input_tokens": [
+        153152,
+        153424
+      ]
+    }
+  ],
+  "examples": {
+    "two_hop": {
+      "seed": 4201,
+      "case_id": "21919845364dd0d8e36d43fee0972503209bcfe24c26c20330bb36271e53d9e4",
+      "expected": [
+        "GSXM|ZUCM"
+      ],
+      "evidence": [
+        {
+          "line": 32,
+          "text": "BOCJ|EBMA => APYQ|MNLD",
+          "char_start": 819,
+          "char_end": 841,
+          "record_depth": 0.25196850393700787
+        },
+        {
+          "line": 95,
+          "text": "APYQ|MNLD => GSXM|ZUCM",
+          "char_start": 2268,
+          "char_end": 2290,
+          "record_depth": 0.7480314960629921
+        }
+      ],
+      "response": "I need to follow exactly two arrows starting from BOCJ|EBMA.\n\n**First arrow:**\nLooking for the record that starts with BOCJ|EBMA:\nBOCJ|EBMA => APYQ|MNLD\n\nSo after one arrow, I'm at APYQ|MNLD.\n\n**Second arrow:**\nLooking for the record that starts with APYQ|MNLD:\nAPYQ|MNLD => GSXM|ZUCM\n\nSo after two arrows, I reach GSXM|ZUCM.\n\nGSXM|ZUCM",
+      "grade": {
+        "exact": false,
+        "sequence_accuracy": 0.0,
+        "symbol_accuracy": 0.0,
+        "format_ok": false,
+        "expected_lines": 1,
+        "received_lines": 15,
+        "matched_lines": 0,
+        "scoring_version": "score-v2",
+        "final_line_answer": "GSXM|ZUCM",
+        "final_line_correct": true
+      },
+      "reminder_response": "I need to follow exactly TWO arrows starting from BOCJ|EBMA.\n\n**First arrow:**\nLooking for the record that starts with BOCJ|EBMA:\nBOCJ|EBMA => APYQ|MNLD\n\nSo after one arrow, I'm at APYQ|MNLD.\n\n**Second arrow:**\nLooking for the record that starts with APYQ|MNLD:\nAPYQ|MNLD => GSXM|ZUCM\n\nSo after two arrows, I'm at GSXM|ZUCM.\n\nGSXM|ZUCM",
+      "reminder_grade": {
+        "exact": false,
+        "sequence_accuracy": 0.0,
+        "symbol_accuracy": 0.0,
+        "format_ok": false,
+        "expected_lines": 1,
+        "received_lines": 15,
+        "matched_lines": 0,
+        "scoring_version": "score-v2",
+        "final_line_answer": "GSXM|ZUCM",
+        "final_line_correct": true
+      }
+    },
+    "needle_failure": {
+      "seed": 4101,
+      "case_id": "1269cd95a99a48d85d726a57e4631b741a7e753bc2633cfcc04d1ed3ff1c0e40",
+      "expected": [
+        "KBJI|EVEB"
+      ],
+      "evidence": [
+        {
+          "line": 7372,
+          "text": "BSFV|DPEY => KBJI|EVEB",
+          "char_start": 169603,
+          "char_end": 169625,
+          "record_depth": 0.9000122085215481
+        }
+      ],
+      "response": "UNKNOWN",
+      "grade": {
+        "exact": false,
+        "sequence_accuracy": 0.0,
+        "symbol_accuracy": 0.0,
+        "format_ok": true,
+        "expected_lines": 1,
+        "received_lines": 1,
+        "matched_lines": 0,
+        "scoring_version": "score-v2",
+        "final_line_answer": "UNKNOWN",
+        "final_line_correct": false
+      },
+      "input_tokens": 111592
+    },
+    "luna_stale_revision": {
+      "seed": 4201,
+      "case_id": "54996fbce59c6f0323fe741e13f1da4009da319ff43417408377b7e60861c1d2",
+      "expected": [
+        "GUKO|LELZ"
+      ],
+      "evidence": [
+        {
+          "line": 32,
+          "text": "revision 9: VWGC|ZFCV => GUKO|LELZ",
+          "char_start": 1211,
+          "char_end": 1245,
+          "record_depth": 0.25196850393700787
+        },
+        {
+          "line": 95,
+          "text": "revision 2: VWGC|ZFCV => OHUC|GTTL",
+          "char_start": 3416,
+          "char_end": 3450,
+          "record_depth": 0.7480314960629921
+        }
+      ],
+      "response": "OHUC|GTTL",
+      "grade": {
+        "exact": false,
+        "sequence_accuracy": 0.0,
+        "symbol_accuracy": 0.0,
+        "format_ok": true,
+        "expected_lines": 1,
+        "received_lines": 1,
+        "matched_lines": 0,
+        "scoring_version": "score-v2",
+        "final_line_answer": "OHUC|GTTL",
+        "final_line_correct": false
+      },
+      "input_tokens": 2358,
+      "selection": "Lowest-seed baseline Luna response that returns the stale value; illustrative post-result selection, no new inferential contrast."
+    }
+  }
+}
