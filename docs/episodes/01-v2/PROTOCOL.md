@@ -82,3 +82,9 @@ Claude $5 (Haiku only). Stage ceilings are in WORKING-PLAN.md. Reserve before di
 stop at the stage cap, and report every planned, observed, skipped and unattempted
 request. No early success stopping, post-result expansion, or pooling across stages
 to hide missing conditions. The final film's story and conclusion follow the data.
+
+Operational note after smoke checks, before substantive results: OpenAI response
+headers reported 10,000,000 TPM for each selected model. Main/format pacing is
+therefore capped at 2,000,000 TPM (and at 80% of any lower observed header limit).
+Haiku remains at 250,000 TPM against its observed 500,000 TPM limit. This changes
+request pacing only, not cases, settings, sample sizes, stopping rules or analyses.
