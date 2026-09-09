@@ -1,60 +1,106 @@
-# Fixed Token Abstract Attention Test (FTAAT)
+# ContextFrontier / FTAAT
 
-FTAAT is a benchmark that probes how large language models memorise abstract key→value associations when both the number of facts ($N$) and the length of each key/value sequence ($K$) are tightly controlled at the token level. By scaling $N$ and $K$ independently, you can trace a model’s failure curve and separate memory load from token complexity.
+Reproducible games that probe where language models lose track of supplied information.
+Built from the **Fixed Token Abstract Attention Test (FTAAT)**, now being prepared for
+an original educational video series, **GPT Learning**.
 
-## Key capabilities
+**Status:** offline-verified runner and production prototype. A live smoke test passed
+for all four pilot models on 2026-09-09; the first comparison campaign is underway.
+See the episode evidence bundle for completed results; do not infer a winner from a smoke test.
 
-- **Token-consistent prompts** – facts and answers are assembled from inventories of single-token symbols (see `scripts/helpers/token_utils.py`), ensuring comparable difficulty across models.
-- **Flexible schedules** – sweep Cartesian grids or staircase progressions of $(N, K)$ via `scripts/run_experiments.py` to map failure boundaries quickly.
-- **Provider abstraction** – adapters in `llm_providers/` standardise query and token-count APIs for OpenAI, DeepSeek, Ollama, and future backends.
-- **Reproducible artefacts** – every run saves rich JSON summaries under `results/`, with utilities in `core/` to import, index, and analyse outcomes.
+## Run locally
 
-## Repository at a glance
+Python 3.11+ on macOS or Linux:
 
-- `scripts/` – experiment runner, prompt builder, batching helpers, and evaluation utilities.
-- `core/` – shared services for template hashing, result discovery, and SQLite ingestion.
-- `llm_providers/` – provider integrations implementing a consistent interface for querying and token counting.
-- `docs/` – in-depth documentation covering design rationale, pipeline details, providers, notebooks, and data management.
-- `FTAAT.ipynb`, `token_generation.ipynb`, `visual.ipynb` – notebooks for exploratory runs, token inventory generation, and visual analysis.
-- `prompt_template.j2` – Jinja2 template that renders the fact table and answer instructions used in every prompt.
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -e '.[dev,video]'
+pytest -q
+python -m contextfrontier example --task two_hop
+python -m contextfrontier plan experiments/pilot.json --output results/pilot-plan --budget 5
+```
 
-## Quick start
+Copy `.env.example` to `.env` and fill in your own API keys locally. `.env` and run
+artifacts are excluded from Git. `doctor` prints presence only, never key values.
 
-1. Install dependencies from `requirements.txt` and export the relevant API keys (e.g., `OPENAI_API_KEY`, `DEEPSEEK_API_KEY`).
-2. Regenerate a prompt identifier if you customise the template:
+```bash
+python -m contextfrontier doctor
+python -m contextfrontier run experiments/pilot.json --output results/pilot-live --budget 5 --live
+python -m contextfrontier report results/pilot-live
+```
 
-	```python
-	from core.template_utils import generate_prompt_id_from_template
-	prompt_id = generate_prompt_id_from_template()
-	```
+Without `--live`, both `plan` and `run` are **offline**, contain no model results, and
+make no claims about token counts or API cost. A live run counts each exact request
+against its requested model before generation. It checks capacity and reserves a
+conservative cost before sending. Resume with the same command/directory; completed
+requests are not sent again. The budget is cumulative for that directory, not per
+invocation. Keep a separate overall campaign budget when using several directories.
 
-3. Launch an experiment sweep:
+A billing-uncertain request stops the run and is never automatically retried. Inspect
+provider billing before starting another run. The local cost ceiling depends on the
+dated configured prices and provider estimates; retain provider-side spending limits.
 
-	```python
-	from scripts.run_experiments import run_experiments
+## The games
 
-	run_experiments(
-		 provider_module="llm_providers.openai_llm.OpenAIProvider",
-		 facts_list_sizes=[3, 6, 12, 24],
-		 token_sizes=[2, 3, 4],
-		 trials=3,
-		 adaptive=True,
-		 prompt_id=prompt_id,
-	)
-	```
+| Game | Question | Main variable |
+|---|---|---|
+| Needle | Can you locate one random association? | Record count and evidence position |
+| Two-hop | Can you follow two linked records? | Separation and record count |
+| Updates | Can you choose the highest revision, even if stale text comes later? | Current/stale placement |
+| Recall | Can you return every association in shuffled question order? | Associations and answer length |
 
-4. Post-process and analyse results with the helpers in `core/` or the notebooks in the project root.
+The same seeded text is shared across models. Answer scoring is deterministic.
+The absent-needle control expects `UNKNOWN`. These tests measure task performance,
+not internal attention weights, human memory, or general intelligence.
 
-## Documentation
+## Counting correctly
 
-The full documentation lives in `docs/`:
+- OpenAI: official `POST /v1/responses/input_tokens` with the actual model and input.
+- Anthropic: official `POST /v1/messages/count_tokens`, including the system prompt.
+  Anthropic documents this as an estimate; the model response supplies actual usage.
+- Store preflight counts, actual input/output usage, cache fields, raw responses,
+  returned model IDs, timestamps, request IDs, and the preflight/actual difference.
+- Optional `tokens --model MODEL --file FILE` uses that model's tiktoken mapping for
+  **text only**. It fails for unknown mappings. It is not a Claude tokenizer or a
+  replacement for full-request counting.
+- **K is the number of pipe-delimited symbols, not a fixed number of BPE tokens.**
+  Joining individually single-token strings can change tokenization. Record depth
+  is a fraction of records, not a claim about exact token position.
+- No automatic prompt truncation. No generic tokenizer fallback. No silent model substitution.
 
-- [Documentation hub](docs/index.md) – entry point and rationale for token-consistent benchmarking.
-- [Benchmark design](docs/benchmark_design.md) – how $(N, K)$ experiments are generated and graded.
-- [Experiment pipeline](docs/pipeline.md) – step-by-step instructions for running and extending the pipeline.
-- [Provider integrations](docs/providers.md) – API contracts and configuration for each backend.
-- [Notebooks guide](docs/notebooks.md) – tips for exploratory workflows.
-- [Results and data management](docs/results_management.md) – how to store, import, and inspect artefacts.
+See [methodology](docs/methodology.md), [audit](docs/audits/2026-09-09.md),
+[experiment protocol](experiments/PROTOCOL.md), and [video treatment](video/TREATMENT.md).
 
-Refer to the documentation for deeper dives into each component and for guidelines on adding new providers or visualisations.
+## Outputs
 
+Each run contains a manifest, full cases, an append-only event ledger, and generated
+Markdown/JSON reports. Exact success uses complete trials; partial symbol/sequence
+scores remain separate. Confidence intervals use seeds/trials, not individual answer
+symbols. Refusals, output exhaustion, errors, and skips are separately reported.
+
+## Historical notebooks
+
+The original notebooks, inventories, and data readers are retained. The legacy paid
+`run_experiments` entry point is retired because its batch matching, output caps,
+and accounting could invalidate comparisons. It stops before making API calls and
+points to the new runner. Legacy grading helpers now penalize missing answers.
+Historical results need re-auditing and are not mixed into new experiments.
+
+`requirements-legacy-lock.txt` records the former environment; it is not the new
+installation path. Optional notebook dependencies are available through `.[legacy]`.
+DeepSeek and Ollama adapters are historical, unverified integrations, outside this
+first OpenAI/Anthropic episode.
+
+## Development
+
+```bash
+pip install -e '.[dev,video]'
+pytest -q
+python -m compileall -q contextfrontier scripts
+```
+
+The runner currently uses a POSIX file lock (macOS/Linux). Windows needs a compatible
+lock implementation before live use. Packaging is local; no PyPI release is claimed.
+No license was present in the original repository; no new open-source license has
+been selected. GitHub visibility is preserved.

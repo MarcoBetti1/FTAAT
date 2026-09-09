@@ -1,0 +1,70 @@
+{
+  "comparison": "same_text",
+  "order_seed": 20260909,
+  "suite": {
+    "tasks": [
+      "needle"
+    ],
+    "record_counts": [
+      4
+    ],
+    "symbol_lengths": [
+      2
+    ],
+    "seeds": [
+      1601
+    ],
+    "depths": [
+      0.5
+    ],
+    "absent_controls": false
+  },
+  "models": [
+    {
+      "provider": "openai",
+      "model": "gpt-4o-mini-2024-07-18",
+      "input_usd_per_million": 0.15,
+      "output_usd_per_million": 0.6,
+      "context_window": 128000,
+      "max_output_tokens": 2048,
+      "pricing_checked": "2026-09-09",
+      "pricing_source": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+      "temperature": 0
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "input_usd_per_million": 0.4,
+      "output_usd_per_million": 1.6,
+      "context_window": 1047576,
+      "max_output_tokens": 2048,
+      "pricing_checked": "2026-09-09",
+      "pricing_source": "https://developers.openai.com/api/docs/models/gpt-4.1-mini",
+      "temperature": 0
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.6-luna",
+      "input_usd_per_million": 0.2,
+      "output_usd_per_million": 1.2,
+      "context_window": 1050000,
+      "max_output_tokens": 2048,
+      "pricing_checked": "2026-09-09",
+      "pricing_source": "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
+      "reasoning_effort": "none",
+      "max_input_tokens": 922000,
+      "price_input_limit": 272000
+    },
+    {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001",
+      "input_usd_per_million": 1,
+      "output_usd_per_million": 5,
+      "context_window": 200000,
+      "max_output_tokens": 2048,
+      "pricing_checked": "2026-09-09",
+      "pricing_source": "https://platform.claude.com/docs/en/models/overview",
+      "temperature": 0
+    }
+  ]
+}

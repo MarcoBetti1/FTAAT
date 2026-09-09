@@ -13,7 +13,7 @@ def build_single_token_vocab(provider) -> list[str]:
     for this provider. You said you'll keep these files in sync.
     """
     token_set = load_token_set(provider.token_set_path)
-    good = [tok for tok in token_set if provider.count_tokens(tok) == 1]
+    good = [tok for tok in sorted(token_set) if provider.count_tokens(tok) == 1]
     if len(good) != len(token_set):
         bad = set(token_set) - set(good)
         raise ValueError(

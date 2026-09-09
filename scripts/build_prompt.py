@@ -7,7 +7,7 @@ from pathlib import Path
 import random
 from jinja2 import Template
 
-TPL = Template(Path("prompt_template.j2").read_text())
+TPL = Template((Path(__file__).resolve().parents[1] / "prompt_template.j2").read_text())
 
 def build_prompt_for_all_keys(facts_list, *, k: int | None = None):
     """

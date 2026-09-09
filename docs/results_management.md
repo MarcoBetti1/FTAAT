@@ -1,3 +1,5 @@
+> **Historical documentation:** the paid notebook runner is retired. See [current methodology](methodology.md) and [repository README](../ReadME.md) for the supported workflow and corrected token/scoring claims.
+
 # Results and data management
 
 FTAAT logs every experiment in JSON files and optionally promotes them into a SQLite database for richer analysis. This document explains the artefacts produced by the pipeline and the utilities available to consume them.

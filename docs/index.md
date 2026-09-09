@@ -1,3 +1,5 @@
+> **Historical documentation:** the paid notebook runner is retired. See [current methodology](methodology.md) and [repository README](../ReadME.md) for the supported workflow and corrected token/scoring claims.
+
 # FTAAT Documentation Hub
 
 Welcome to the documentation for the Fixed Token Abstract Attention Test (FTAAT) benchmark. The project evaluates large language models on an abstract key–value memorisation task while tightly controlling token usage. Use the guides below to understand the benchmark design, run experiments, integrate providers, and analyse results.

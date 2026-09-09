@@ -1,3 +1,5 @@
+> **Historical documentation:** the paid notebook runner is retired. See [current methodology](methodology.md) and [repository README](../ReadME.md) for the supported workflow and corrected token/scoring claims.
+
 # Notebooks guide
 
 The repository ships three Jupyter notebooks that complement the scripted pipeline. They are useful for exploratory work, ad-hoc debugging, and visual analysis.

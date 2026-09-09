@@ -1,3 +1,5 @@
+> **Historical documentation:** the paid notebook runner is retired. See [current methodology](methodology.md) and [repository README](../ReadME.md) for the supported workflow and corrected token/scoring claims.
+
 # Provider integrations
 
 The `llm_providers` package encapsulates the adapters required to query different large language model backends while keeping the benchmark pipeline agnostic to their APIs.
